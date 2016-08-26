@@ -5,12 +5,3 @@ C:\projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.dll
 C:\projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.pdb
 C:\projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.WForm.resources
 C:\projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.csproj.GenerateResource.Cache
-D:\projetos\rah\rah.lib.core\bin\Debug\rah.lib.core.dll
-D:\projetos\rah\rah.lib.core\bin\Debug\rah.lib.core.pdb
-D:\projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.csprojResolveAssemblyReference.cache
-D:\projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.WForm.resources
-D:\projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.csproj.GenerateResource.Cache
-D:\projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.dll
-D:\projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.pdb
-D:\projetos\rah\rah.lib.core\bin\Debug\Newtonsoft.Json.dll
-D:\projetos\rah\rah.lib.core\bin\Debug\Newtonsoft.Json.xml
