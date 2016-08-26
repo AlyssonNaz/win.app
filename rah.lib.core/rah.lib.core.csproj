@@ -49,6 +49,12 @@
     <Compile Include="ConnectionHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Token.cs" />
+    <Compile Include="WChildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WChildForm.Designer.cs">
+      <DependentUpon>WChildForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WDMMain.cs" />
     <Compile Include="WEntity.cs" />
     <Compile Include="WForm.cs">
@@ -60,6 +66,9 @@
     <Compile Include="WList.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="WChildForm.resx">
+      <DependentUpon>WChildForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WForm.resx">
       <DependentUpon>WForm.cs</DependentUpon>
     </EmbeddedResource>
