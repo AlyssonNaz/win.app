@@ -10,4 +10,3 @@ C:\projetos\rah\rah\obj\Debug\rah.exe
 C:\projetos\rah\rah\obj\Debug\rah.pdb
 C:\projetos\rah\rah\obj\Debug\rah.acessoForm.resources
 C:\projetos\rah\rah\obj\Debug\rah.MainForm.resources
-D:\projetos\rah\rah\bin\Debug\rah.exe.config
