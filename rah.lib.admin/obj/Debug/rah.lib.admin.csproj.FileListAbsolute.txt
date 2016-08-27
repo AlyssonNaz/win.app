@@ -1,0 +1,4 @@
+D:\projetos\rah\rah.lib.admin\bin\Debug\rah.lib.admin.dll
+D:\projetos\rah\rah.lib.admin\bin\Debug\rah.lib.admin.pdb
+D:\projetos\rah\rah.lib.admin\obj\Debug\rah.lib.admin.dll
+D:\projetos\rah\rah.lib.admin\obj\Debug\rah.lib.admin.pdb

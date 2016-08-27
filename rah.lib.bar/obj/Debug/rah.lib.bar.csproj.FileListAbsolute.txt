@@ -1,0 +1,5 @@
+D:\projetos\rah\rah.lib.bar\bin\Debug\rah.lib.bar.dll
+D:\projetos\rah\rah.lib.bar\bin\Debug\rah.lib.bar.pdb
+D:\projetos\rah\rah.lib.bar\obj\Debug\rah.lib.bar.csprojResolveAssemblyReference.cache
+D:\projetos\rah\rah.lib.bar\obj\Debug\rah.lib.bar.dll
+D:\projetos\rah\rah.lib.bar\obj\Debug\rah.lib.bar.pdb

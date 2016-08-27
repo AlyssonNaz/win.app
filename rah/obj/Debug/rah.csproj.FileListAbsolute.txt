@@ -19,7 +19,6 @@ D:\projetos\rah\rah\obj\Debug\rah.csprojResolveAssemblyReference.cache
 D:\projetos\rah\rah\obj\Debug\rah.acessoForm.resources
 D:\projetos\rah\rah\obj\Debug\rah.MainForm.resources
 D:\projetos\rah\rah\obj\Debug\rah.Properties.Resources.resources
-D:\projetos\rah\rah\obj\Debug\rah.WChildForm.resources
 D:\projetos\rah\rah\obj\Debug\rah.csproj.GenerateResource.Cache
 D:\projetos\rah\rah\obj\Debug\rah.exe
 D:\projetos\rah\rah\obj\Debug\rah.pdb

@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rah.lib.core", "rah.lib.core\rah.lib.core.csproj", "{EB9F9A83-E858-4061-9DFA-B0966EE9219B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rah", "rah\rah.csproj", "{31BBB69F-F873-45C9-B646-0CEE2A38D4F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rah.lib.admin", "rah.lib.admin\rah.lib.admin.csproj", "{F9A73BC2-1F63-4851-87AE-6BCB1EEA4EF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rah.lib.bar", "rah.lib.bar\rah.lib.bar.csproj", "{9D1B6FC4-33B4-4911-AA4F-D9C238FD8E84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{31BBB69F-F873-45C9-B646-0CEE2A38D4F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31BBB69F-F873-45C9-B646-0CEE2A38D4F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31BBB69F-F873-45C9-B646-0CEE2A38D4F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9A73BC2-1F63-4851-87AE-6BCB1EEA4EF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9A73BC2-1F63-4851-87AE-6BCB1EEA4EF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9A73BC2-1F63-4851-87AE-6BCB1EEA4EF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9A73BC2-1F63-4851-87AE-6BCB1EEA4EF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D1B6FC4-33B4-4911-AA4F-D9C238FD8E84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D1B6FC4-33B4-4911-AA4F-D9C238FD8E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D1B6FC4-33B4-4911-AA4F-D9C238FD8E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D1B6FC4-33B4-4911-AA4F-D9C238FD8E84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
