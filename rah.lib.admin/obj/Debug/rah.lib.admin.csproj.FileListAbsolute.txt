@@ -1,0 +1,9 @@
+D:\projetos\rah\rah.lib.admin\bin\Debug\rah.lib.admin.dll
+D:\projetos\rah\rah.lib.admin\bin\Debug\rah.lib.admin.pdb
+D:\projetos\rah\rah.lib.admin\bin\Debug\rah.lib.core.dll
+D:\projetos\rah\rah.lib.admin\bin\Debug\Newtonsoft.Json.dll
+D:\projetos\rah\rah.lib.admin\bin\Debug\rah.lib.core.pdb
+D:\projetos\rah\rah.lib.admin\bin\Debug\Newtonsoft.Json.xml
+D:\projetos\rah\rah.lib.admin\obj\Debug\rah.lib.admin.csprojResolveAssemblyReference.cache
+D:\projetos\rah\rah.lib.admin\obj\Debug\rah.lib.admin.dll
+D:\projetos\rah\rah.lib.admin\obj\Debug\rah.lib.admin.pdb
