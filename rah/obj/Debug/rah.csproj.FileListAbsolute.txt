@@ -22,3 +22,7 @@ D:\projetos\rah\rah\obj\Debug\rah.Properties.Resources.resources
 D:\projetos\rah\rah\obj\Debug\rah.csproj.GenerateResource.Cache
 D:\projetos\rah\rah\obj\Debug\rah.exe
 D:\projetos\rah\rah\obj\Debug\rah.pdb
+D:\projetos\rah\rah\bin\Debug\rah.lib.admin.dll
+D:\projetos\rah\rah\bin\Debug\rah.lib.bar.dll
+D:\projetos\rah\rah\bin\Debug\rah.lib.admin.pdb
+D:\projetos\rah\rah\bin\Debug\rah.lib.bar.pdb

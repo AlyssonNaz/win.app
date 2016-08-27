@@ -90,6 +90,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\rah.lib.admin\rah.lib.admin.csproj">
+      <Project>{f9a73bc2-1f63-4851-87ae-6bcb1eea4ef6}</Project>
+      <Name>rah.lib.admin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\rah.lib.bar\rah.lib.bar.csproj">
+      <Project>{9d1b6fc4-33b4-4911-aa4f-d9c238fd8e84}</Project>
+      <Name>rah.lib.bar</Name>
+    </ProjectReference>
     <ProjectReference Include="..\rah.lib.core\rah.lib.core.csproj">
       <Project>{eb9f9a83-e858-4061-9dfa-b0966ee9219b}</Project>
       <Name>rah.lib.core</Name>
