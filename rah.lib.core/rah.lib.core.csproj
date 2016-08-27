@@ -30,13 +30,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -65,7 +78,19 @@
     <Compile Include="WForm.Designer.cs">
       <DependentUpon>WForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WFrame.Designer.cs">
+      <DependentUpon>WFrame.cs</DependentUpon>
+    </Compile>
     <Compile Include="WList.cs" />
+    <Compile Include="WScrollFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WScrollFrame.Designer.cs">
+      <DependentUpon>WScrollFrame.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="WChildForm.resx">
@@ -73,6 +98,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WForm.resx">
       <DependentUpon>WForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WFrame.resx">
+      <DependentUpon>WFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WScrollFrame.resx">
+      <DependentUpon>WScrollFrame.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
