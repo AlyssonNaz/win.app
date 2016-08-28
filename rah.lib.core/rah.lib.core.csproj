@@ -36,6 +36,9 @@
     <Reference Include="DevExpress.Utils.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpo.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -91,8 +94,15 @@
     <Compile Include="WScrollFrame.Designer.cs">
       <DependentUpon>WScrollFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="WViewFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WViewFrame.Designer.cs">
+      <DependentUpon>WViewFrame.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="WChildForm.resx">
       <DependentUpon>WChildForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WScrollFrame.resx">
       <DependentUpon>WScrollFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WViewFrame.resx">
+      <DependentUpon>WViewFrame.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
