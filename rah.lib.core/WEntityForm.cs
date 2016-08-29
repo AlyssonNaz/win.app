@@ -15,12 +15,7 @@ namespace rah.lib.core
         public WEntityForm(MetaData metadata)
         {
             InitializeComponent();
-            this.metadata = metadata;
-            Load();
-        }
-
-        private void Load()
-        {
+            this.metadata = metadata;            
         }
     }
 }

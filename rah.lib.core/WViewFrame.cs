@@ -8,13 +8,7 @@ namespace rah.lib.core
         public WViewFrame(MetaData metadata)
         {
             InitializeComponent();
-            this.metadata = metadata;
-            Load();
-        }
-
-        private void Load()
-        {
-            throw new NotImplementedException();
+            this.metadata = metadata;            
         }
     }
 }
