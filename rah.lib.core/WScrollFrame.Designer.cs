@@ -120,12 +120,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panTop;
-        private System.Windows.Forms.Panel panBottom;
-        private System.Windows.Forms.Panel panLeft;
-        private System.Windows.Forms.Panel panRight;
-        private System.Windows.Forms.Panel panFill;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Panel panTop;
+        public System.Windows.Forms.Panel panBottom;
+        public System.Windows.Forms.Panel panLeft;
+        public System.Windows.Forms.Panel panRight;
+        public System.Windows.Forms.Panel panFill;
     }
 }

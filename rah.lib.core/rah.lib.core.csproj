@@ -40,6 +40,7 @@
     <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -96,6 +97,12 @@
       <DependentUpon>WFrame.cs</DependentUpon>
     </Compile>
     <Compile Include="WList.cs" />
+    <Compile Include="WMasterFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WMasterFrame.Designer.cs">
+      <DependentUpon>WMasterFrame.cs</DependentUpon>
+    </Compile>
     <Compile Include="WScrollFrame.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WFrame.resx">
       <DependentUpon>WFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WMasterFrame.resx">
+      <DependentUpon>WMasterFrame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WScrollFrame.resx">
       <DependentUpon>WScrollFrame.cs</DependentUpon>
