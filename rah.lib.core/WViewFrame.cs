@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace rah.lib.core
+﻿namespace rah.lib.core
 {
     public partial class WViewFrame : WFrame
     {
