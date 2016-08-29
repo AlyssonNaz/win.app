@@ -68,6 +68,7 @@
     <Compile Include="IWEntity.cs" />
     <Compile Include="IWList.cs" />
     <Compile Include="MetaData.cs" />
+    <Compile Include="MetaDataType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Token.cs" />
     <Compile Include="WChildForm.cs">

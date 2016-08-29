@@ -1,5 +1,5 @@
 ﻿namespace rah.lib.core
-{
+{    
     public class MetaData
     {
         public string Name { get; set; }
@@ -10,7 +10,8 @@
         public bool ReadOnly { get; set; }
 
         public void Load(string metaData)
-        {
+        {            
+            
         }
-    }
+    }    
 }

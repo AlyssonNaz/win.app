@@ -5,10 +5,11 @@ using System.Text;
 namespace rah.lib.core
 {
     public class ConnectionHandler
-    {        
+    {
+        private const string URI = "https://seugarcom.herokuapp.com/api/";
         public string GetResponse(string postData, string command)
-        {
-            var request = (HttpWebRequest)WebRequest.Create("https://seugarcom.herokuapp.com/api/" + command + "/");            
+        {            
+            var request = (HttpWebRequest)WebRequest.Create($"{URI}{command}/");
             var data = Encoding.UTF8.GetBytes(postData);
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";

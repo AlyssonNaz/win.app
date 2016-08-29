@@ -1,18 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace rah.lib.core
 {
-    public partial class WViewFrame : rah.lib.core.WFrame
+    public partial class WViewFrame : WFrame
     {
-        public WViewFrame()
+        private MetaData metadata;
+        public WViewFrame(MetaData metadata)
         {
             InitializeComponent();
+            this.metadata = metadata;
+            Load();
+        }
+
+        private void Load()
+        {
+            throw new NotImplementedException();
         }
     }
 }
