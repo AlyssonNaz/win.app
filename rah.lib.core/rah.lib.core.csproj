@@ -38,6 +38,7 @@
     <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -76,6 +77,12 @@
     </Compile>
     <Compile Include="WDMMain.cs" />
     <Compile Include="WEntity.cs" />
+    <Compile Include="WEntityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WEntityForm.Designer.cs">
+      <DependentUpon>WEntityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +113,9 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="WChildForm.resx">
       <DependentUpon>WChildForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WEntityForm.resx">
+      <DependentUpon>WEntityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WForm.resx">
       <DependentUpon>WForm.cs</DependentUpon>
