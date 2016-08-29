@@ -6,36 +6,6 @@ namespace rah.lib.core
 {
     public class Token
     {
-        private string _value;
-        private string _header;
-        private string _payLoad;
-        private string _signature;
-
-        public Token()
-        {
-            _value = string.Empty;
-        }
-
-        public string Value
-        {
-            get { return _value; }
-        }
-
-        public string Header
-        {
-            get { return _header; }
-        }
-
-        public string PayLoad
-        {
-            get { return _payLoad; }
-        }
-
-        public string Signature
-        {
-            get { return _signature; }
-        }
-
         private static byte[] Base64UrlDecode(string input)
         {
             var output = input;
@@ -51,13 +21,18 @@ namespace rah.lib.core
             return Convert.FromBase64String(output); // Standard base64 decoder
         }
 
+        public string Value { get; set; }
+        public string Header { get; set; }
+        public string PayLoad { get; set; }
+        public string Signature { get; set; }
+
         public void load(string value)
         {
-            _value = ((dynamic)JsonConvert.DeserializeObject(value)).token;
-            string[] content = _value.Split('.');
-            _header = content[0];
-            _payLoad = Encoding.UTF8.GetString(Base64UrlDecode(content[1]));
-            _signature = content[2];
+            Value = ((dynamic)JsonConvert.DeserializeObject(value)).token;
+            string[] content = Value.Split('.');
+            Header = content[0];
+            PayLoad = Encoding.UTF8.GetString(Base64UrlDecode(content[1]));
+            Signature = content[2];
         }
     }
 }

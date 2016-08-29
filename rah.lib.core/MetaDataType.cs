@@ -1,5 +1,8 @@
+using System;
+
 namespace rah.lib.core
 {
+    [Flags]
     public enum MetaDataType
     {
         MetaDataInt = 0,
