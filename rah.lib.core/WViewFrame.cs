@@ -1,12 +1,10 @@
 ﻿namespace rah.lib.core
 {
     public partial class WViewFrame : WFrame
-    {
-        private MetaData metadata;
-        public WViewFrame(MetaData metadata)
+    {        
+        public WViewFrame()
         {
-            InitializeComponent();
-            this.metadata = metadata;            
+            InitializeComponent();            
         }
     }
 }

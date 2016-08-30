@@ -16,7 +16,7 @@ namespace rah.lib.core
                 case 0: break; // No pad chars in this case
                 case 2: output += "=="; break; // Two pad chars
                 case 3: output += "="; break; // One pad char
-                default: throw new System.Exception("Illegal base64url string!");
+                default: throw new Exception("Illegal base64url string!");
             }            
             return Convert.FromBase64String(output); // Standard base64 decoder
         }
