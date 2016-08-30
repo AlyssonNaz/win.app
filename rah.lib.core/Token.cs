@@ -26,7 +26,7 @@ namespace rah.lib.core
         public string PayLoad { get; set; }
         public string Signature { get; set; }
 
-        public void load(string value)
+        public void loadToken(string value)
         {
             Value = ((dynamic)JsonConvert.DeserializeObject(value)).token;
             string[] content = Value.Split('.');

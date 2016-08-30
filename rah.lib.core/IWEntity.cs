@@ -5,7 +5,7 @@ namespace rah.lib.core
     public interface IWEntity
     {
         int Id { set; get; }
-        DateTime DataCriacao { set; get; }
-        DateTime DataModificacao { set; get; }
+        DateTime createdAt { set; get; }
+        DateTime updatedAt { set; get; }
     }
 }

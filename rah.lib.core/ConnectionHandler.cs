@@ -30,7 +30,10 @@ namespace rah.lib.core
 
         public string GetResponse(string postData, string command)
         {
-            return GetResponse(postData, command, "");
+            string token = "";
+            if (WDMMain.GetInstance().Token != null)
+                token = WDMMain.GetInstance().Token.Value;
+            return GetResponse(postData, command, token);
         }
     }
 }
