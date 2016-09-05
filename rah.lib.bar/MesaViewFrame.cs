@@ -8,5 +8,10 @@ namespace rah.lib.bar
         {
             InitializeComponent();
         }
+
+        protected override void DoLoadModel(string model)
+        {
+            base.DoLoadModel(model);
+        }
     }
 }

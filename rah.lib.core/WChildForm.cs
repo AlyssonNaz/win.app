@@ -5,16 +5,16 @@
         public WChildForm()
         {
             InitializeComponent();
-            _viewFrame = null;
+            ViewFrame = null;
         }
 
-        private WViewFrame _viewFrame;
+        public WViewFrame ViewFrame { set; get; }
 
         public void RegisterViewFrame(WViewFrame ViewFrame)
         {
-            _viewFrame = ViewFrame;
-            _viewFrame.Parent = this;
-            _viewFrame.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ViewFrame = ViewFrame;
+            this.ViewFrame.Parent = this;
+            this.ViewFrame.Dock = System.Windows.Forms.DockStyle.Fill;            
         }
     }
 }

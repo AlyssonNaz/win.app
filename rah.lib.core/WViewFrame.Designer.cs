@@ -118,10 +118,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panClient;
-        private System.Windows.Forms.TableLayoutPanel panLayoutClient;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        public DevExpress.XtraNavBar.NavBarControl navBarControl1;
-        public DevExpress.XtraGrid.GridControl gridControl1;
+        protected DevExpress.XtraNavBar.NavBarControl navBarControl1;
+        protected DevExpress.XtraGrid.GridControl gridControl1;
+        protected System.Windows.Forms.TableLayoutPanel panLayoutClient;
+        protected DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

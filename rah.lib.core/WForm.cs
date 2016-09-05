@@ -16,6 +16,11 @@ namespace rah.lib.core
                     e.Handled = true;
                 }
             };
+
+            KeyDown += (sender, e) =>
+            {
+                
+            };
         }
     }
 }

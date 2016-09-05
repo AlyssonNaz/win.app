@@ -33,7 +33,7 @@
             // WChildForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(380, 259);
+            this.ClientSize = new System.Drawing.Size(656, 426);
             this.Name = "WChildForm";
             this.Text = "WChildForm";
             this.ResumeLayout(false);

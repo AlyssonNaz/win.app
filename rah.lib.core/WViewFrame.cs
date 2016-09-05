@@ -6,5 +6,15 @@
         {
             InitializeComponent();            
         }
+
+        protected virtual void DoLoadModel(string model)
+        {
+            // para ser sobrecarregado.
+        }
+
+        public void LoadModel(string model)
+        {
+            DoLoadModel(model);
+        }
     }
 }
