@@ -36,6 +36,7 @@
             this.ClientSize = new System.Drawing.Size(656, 426);
             this.Name = "WChildForm";
             this.Text = "WChildForm";
+            this.Leave += new System.EventHandler(this.WChildForm_Leave);
             this.ResumeLayout(false);
 
         }

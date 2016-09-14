@@ -16,5 +16,11 @@
             this.ViewFrame.Parent = this;
             this.ViewFrame.Dock = System.Windows.Forms.DockStyle.Fill;            
         }
+
+        private void WChildForm_Leave(object sender, System.EventArgs e)
+        {
+            if (ViewFrame != null)
+                ViewFrame.DoLeave();
+        }
     }
 }

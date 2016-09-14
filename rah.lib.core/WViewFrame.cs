@@ -27,13 +27,18 @@ namespace rah.lib.core
 
         public void LoadModel(string model)
         {
-            DoLoadModel(model);
             this.model = model;
+            DoLoadModel(model);            
         }
 
         protected string GetModelListUrl(string model)
         {
             return $"api/model/{model}/list";
+        }
+
+        public void DoLeave()
+        {
+            gridView1.SaveLayoutToRegistry($"SOFTWARE\\Rah\\{model}"); 
         }
 
         protected void buildResponse(string response)
@@ -45,7 +50,8 @@ namespace rah.lib.core
 
             BindingSource bs = new BindingSource();
             bs.DataSource = _dataTable;
-            gridControl1.DataSource = bs.DataSource; 
+            gridControl1.DataSource = bs.DataSource;            
+            gridView1.RestoreLayoutFromRegistry($"SOFTWARE\\Rah\\{model}");
         }
 
         private void buildItens(dynamic itensValues)

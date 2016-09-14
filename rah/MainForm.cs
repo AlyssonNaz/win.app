@@ -17,6 +17,7 @@ namespace rah
             childForm.RegisterViewFrame(viewFrame);
             childForm.ViewFrame.LoadModel(model);
             childForm.MdiParent = this;
+            childForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             childForm.Show();
         }
 
@@ -27,6 +28,7 @@ namespace rah
             childForm.RegisterViewFrame(mesa);
             childForm.ViewFrame.LoadModel("table");
             childForm.MdiParent = this;
+            childForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             childForm.Show();            
         }
 
