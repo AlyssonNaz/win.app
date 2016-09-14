@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
@@ -10,12 +12,12 @@ namespace rah.lib.core
         public WViewFrame()
         {
             InitializeComponent();
-            _metaData = new MetaData();
             _dataTable = new DataTable();
+            _metaDataList = new List<MetaData>();
         }
 
-        private MetaData _metaData;
-        private DataTable _dataTable; 
+        private DataTable _dataTable;
+        private IList<MetaData> _metaDataList;
 
         protected virtual void DoLoadModel(string model)
         {
@@ -45,8 +47,22 @@ namespace rah.lib.core
         }
 
         private void buildItens(dynamic itensValues)
-        {
-                        
+        {            
+            foreach (var iten in itensValues)
+            {
+                var results = JsonConvert.DeserializeObject<dynamic>(iten.ToString());
+                var row = _dataTable.NewRow();
+                foreach (var result in results)
+                {
+                    var name = result.Name;
+                    var value = result.Value;
+                    if (_dataTable.Columns.IndexOf(name) != -1)
+                    {
+                        row[name] = value;                        
+                    }
+                }
+                _dataTable.Rows.Add(row);
+            }
         }
 
         private void buildMetaData(dynamic metaDataValues)
@@ -54,22 +70,26 @@ namespace rah.lib.core
             foreach(var metaData in metaDataValues)
             {
                 var result = JsonConvert.DeserializeObject<dynamic>(metaData.Value.ToString());
+                var _metaData = new MetaData();
+                _metaData.Name = metaData.Name;
                 _metaData.Caption = result.caption;
                 _metaData.ReadOnly = result.readOnly;
                 if (result.type == "string")
                     _metaData.DataType = MetaDataType.MetaDataString;
                 else if (result.type == "int")
                     _metaData.DataType = MetaDataType.MetaDataInt;
-                buildDataTable();
+                _metaDataList.Add(_metaData);
+                buildDataTable(_metaData);
             }
         }
 
-        private void buildDataTable()
+        private void buildDataTable(MetaData _metaData)
         {
             var dataColumn = new DataColumn();
+            dataColumn.ColumnName = _metaData.Name;
             dataColumn.Caption = _metaData.Caption;
             dataColumn.ReadOnly = _metaData.ReadOnly;
-            dataColumn.MaxLength = _metaData.Size;
+            //dataColumn.MaxLength = _metaData.Size;
             switch (_metaData.DataType)
             {
                 case MetaDataType.MetaDataInt :
