@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Data;
+using System.Windows.Forms;
 
 namespace rah.lib.core
 {
@@ -37,14 +38,20 @@ namespace rah.lib.core
             var itens = ((dynamic)JsonConvert.DeserializeObject(response)).itens;
             buildMetaData(metaData);
             buildItens(itens);
+
+            BindingSource bs = new BindingSource();
+            bs.DataSource = _dataTable;
+            gridControl1.DataSource = bs.DataSource; 
         }
 
         private void buildItens(dynamic itensValues)
-        {            
+        {
+                        
         }
 
         private void buildMetaData(dynamic metaDataValues)
         {
+            buildDataTable();
             //var metaDataInfo = new MetaData();
             //foreach (var m in metaDataValue)
             //{
@@ -60,7 +67,6 @@ namespace rah.lib.core
             //    }
             //}
 
-            buildDataTable();
         }
 
         private void buildDataTable()
@@ -68,6 +74,7 @@ namespace rah.lib.core
             var dataColumn = new DataColumn();
             dataColumn.Caption = _metaData.Caption;
             dataColumn.ReadOnly = _metaData.ReadOnly;
+            dataColumn.MaxLength = _metaData.Size;
             switch (_metaData.DataType)
             {
                 case MetaDataType.MetaDataInt :

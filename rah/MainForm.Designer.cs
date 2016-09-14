@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.barToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mesaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.baresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,8 @@
             // barToolStripMenuItem
             // 
             this.barToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mesaToolStripMenuItem});
+            this.mesaToolStripMenuItem,
+            this.baresToolStripMenuItem});
             this.barToolStripMenuItem.Name = "barToolStripMenuItem";
             this.barToolStripMenuItem.Size = new System.Drawing.Size(36, 20);
             this.barToolStripMenuItem.Text = "Bar";
@@ -58,6 +60,13 @@
             this.mesaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mesaToolStripMenuItem.Text = "Mesa";
             this.mesaToolStripMenuItem.Click += new System.EventHandler(this.mesaToolStripMenuItem_Click);
+            // 
+            // baresToolStripMenuItem
+            // 
+            this.baresToolStripMenuItem.Name = "baresToolStripMenuItem";
+            this.baresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.baresToolStripMenuItem.Text = "Bares";
+            this.baresToolStripMenuItem.Click += new System.EventHandler(this.baresToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -81,5 +90,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem barToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mesaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem baresToolStripMenuItem;
     }
 }

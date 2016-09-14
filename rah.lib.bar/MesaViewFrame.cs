@@ -1,5 +1,4 @@
-﻿using System;
-using rah.lib.core;
+﻿using rah.lib.core;
 
 namespace rah.lib.bar
 {

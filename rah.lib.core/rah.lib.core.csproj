@@ -98,6 +98,12 @@
     <Compile Include="WFrame.Designer.cs">
       <DependentUpon>WFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="WGenericViewFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WGenericViewFrame.Designer.cs">
+      <DependentUpon>WGenericViewFrame.cs</DependentUpon>
+    </Compile>
     <Compile Include="WList.cs" />
     <Compile Include="WMasterFrame.cs">
       <SubType>UserControl</SubType>
