@@ -12,6 +12,8 @@ namespace rah.lib.bar
         protected override void DoLoadModel(string model)
         {
             base.DoLoadModel(model);
+            var connection = new ConnectionHandler();
+            var response = connection.GetResponse("", $"api/model/{model}/list");
         }
     }
 }

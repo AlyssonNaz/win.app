@@ -15,7 +15,7 @@ namespace rah
             var childForm = new WChildForm();
             var mesa = new MesaViewFrame();           
             childForm.RegisterViewFrame(mesa);
-            childForm.ViewFrame.LoadModel("Mesa");
+            childForm.ViewFrame.LoadModel("table");
             childForm.MdiParent = this;
             childForm.Show();            
         }

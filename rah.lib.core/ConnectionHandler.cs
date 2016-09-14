@@ -6,34 +6,29 @@ namespace rah.lib.core
 {
     public class ConnectionHandler
     {
-        private const string URI = "https://seugarcom.herokuapp.com/api/";
+        private const string URI = "https://seugarcom.herokuapp.com/";
 
-        public string GetResponse(string postData, string command, string header)
+        public string GetResponse(string postData, string command)
         {            
             var request = (HttpWebRequest)WebRequest.Create($"{URI}{command}/");
             var data = Encoding.UTF8.GetBytes(postData);
-            request.Method = "POST";            
-            if (header != "")
-            {
-                request.Method = "GET";
-                request.Headers.Add("x-access-token", header);                
-            }
+            request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
-            request.ContentLength = data.Length;
-            using (var stream = request.GetRequestStream())
+            var token = WDMMain.GetInstance().Token;
+            if (token != null)
             {
-                stream.Write(data, 0, data.Length);
+                request.Headers["x-access-token"] = token.Value.ToString();
+            }
+            else
+            {
+                request.ContentLength = data.Length;
+                using (var stream = request.GetRequestStream())
+                {
+                    stream.Write(data, 0, data.Length);
+                }
             }
             var response = (HttpWebResponse)request.GetResponse();
             return new StreamReader(response.GetResponseStream()).ReadToEnd();
-        }
-
-        public string GetResponse(string postData, string command)
-        {
-            string token = "";
-            if (WDMMain.GetInstance().Token != null)
-                token = WDMMain.GetInstance().Token.Value;
-            return GetResponse(postData, command, token);
         }
     }
 }

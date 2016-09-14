@@ -22,10 +22,7 @@
 
         public void RegisterToken(Token token)
         {
-            if(Token == null)
-            {
-                Token = token;
-            }                
+            Token = token;
         }
 
         public Token Token { private set; get; }

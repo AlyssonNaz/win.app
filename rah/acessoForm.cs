@@ -16,8 +16,8 @@ namespace rah
             try
             {
                 var connection = new ConnectionHandler();                                
-                Token token = new Token();               
-                token.loadToken(connection.GetResponse($"username={textBoxUserName.Text}&password={textBoxPassword.Text}", "auth"));
+                Token token = new Token();                               
+                token.loadToken(connection.GetResponse($"username={textBoxUserName.Text}&password={textBoxPassword.Text}", "api/auth"));
                 WDMMain.GetInstance().RegisterToken(token);                                
                 Close();
             }
