@@ -30,5 +30,10 @@ namespace rah.lib.core
             var response = (HttpWebResponse)request.GetResponse();
             return new StreamReader(response.GetResponseStream()).ReadToEnd();
         }
+
+        public string GetResponse(string command)
+        {
+            return GetResponse(string.Empty, command);
+        }
     }
 }
