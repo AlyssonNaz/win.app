@@ -34,5 +34,10 @@ namespace rah
         {
             ShowGenericModel("bar");
         }
+
+        private void usuáriosToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            ShowGenericModel("user");
+        }
     }
 }

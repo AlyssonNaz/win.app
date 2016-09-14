@@ -51,22 +51,17 @@ namespace rah.lib.core
 
         private void buildMetaData(dynamic metaDataValues)
         {
-            buildDataTable();
-            //var metaDataInfo = new MetaData();
-            //foreach (var m in metaDataValue)
-            //{
-            //    var metaDataFirst = m.First;
-            //    foreach (var metaData in metaDataFirst)
-            //    {
-            //        metaDataInfo.Caption = metaData.caption;
-            //        metaDataInfo.ReadOnly = metaData.readOnly;
-            //        if (metaData.type == "string")
-            //            metaDataInfo.DataType = MetaDataType.MetaDataString;
-            //        else if (metaData.type == "int")
-            //            metaDataInfo.DataType = MetaDataType.MetaDataInt;
-            //    }
-            //}
-
+            foreach(var metaData in metaDataValues)
+            {
+                var result = JsonConvert.DeserializeObject<dynamic>(metaData.Value.ToString());
+                _metaData.Caption = result.caption;
+                _metaData.ReadOnly = result.readOnly;
+                if (result.type == "string")
+                    _metaData.DataType = MetaDataType.MetaDataString;
+                else if (result.type == "int")
+                    _metaData.DataType = MetaDataType.MetaDataInt;
+                buildDataTable();
+            }
         }
 
         private void buildDataTable()
