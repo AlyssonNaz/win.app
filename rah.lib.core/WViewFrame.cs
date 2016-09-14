@@ -13,11 +13,12 @@ namespace rah.lib.core
         {
             InitializeComponent();
             _dataTable = new DataTable();
-            _metaDataList = new List<MetaData>();
+            _metaDataList = new List<MetaData>();           
         }
 
         private DataTable _dataTable;
         private IList<MetaData> _metaDataList;
+        private string model;
 
         protected virtual void DoLoadModel(string model)
         {
@@ -27,6 +28,7 @@ namespace rah.lib.core
         public void LoadModel(string model)
         {
             DoLoadModel(model);
+            this.model = model;
         }
 
         protected string GetModelListUrl(string model)
