@@ -7,12 +7,12 @@ using System.Windows.Forms;
 namespace rah.lib.core
 {
     public partial class WViewFrame : WFrame
-    {        
+    {
         public WViewFrame()
         {
             InitializeComponent();
             DataTable = new DataTable();
-            MetaDataList = new List<MetaData>();            
+            MetaDataList = new List<MetaData>();
         }
 
         private DataTable DataTable;
@@ -27,7 +27,7 @@ namespace rah.lib.core
         public void LoadModel(string model)
         {
             this.model = model;
-            DoLoadModel(model);            
+            DoLoadModel(model);
         }
 
         protected string GetModelListUrl(string model)
@@ -37,7 +37,7 @@ namespace rah.lib.core
 
         public void DoLeave()
         {
-            gridView1.SaveLayoutToRegistry($"SOFTWARE\\Rah\\{model}"); 
+            gridView1.SaveLayoutToRegistry($"SOFTWARE\\Rah\\{model}");
         }
 
         protected void buildResponse(string response)
@@ -54,7 +54,7 @@ namespace rah.lib.core
         }
 
         private void buildItens(dynamic itensValues)
-        {            
+        {
             foreach (var iten in itensValues)
             {
                 var results = JsonConvert.DeserializeObject<dynamic>(iten.ToString());
@@ -70,13 +70,13 @@ namespace rah.lib.core
 
         private void buildMetaData(dynamic metaDataValues)
         {
-            foreach(var m in metaDataValues)
+            foreach (var m in metaDataValues)
             {
                 var result = JsonConvert.DeserializeObject<dynamic>(m.Value.ToString());
                 var metaData = new MetaData();
                 metaData.Name = m.Name;
                 metaData.Caption = result.caption;
-                metaData.ReadOnly = result.readOnly;                
+                metaData.ReadOnly = result.readOnly;
                 if (result.type == "string")
                 {
                     metaData.DataType = MetaDataType.MetaDataString;
@@ -84,7 +84,7 @@ namespace rah.lib.core
                 else if (result.type == "int")
                 {
                     metaData.DataType = MetaDataType.MetaDataInt;
-                }                    
+                }
                 MetaDataList.Add(metaData);
                 buildDataTable(metaData);
             }
@@ -96,36 +96,50 @@ namespace rah.lib.core
             dataColumn.ColumnName = metaData.Name;
             dataColumn.Caption = metaData.Caption;
             dataColumn.ReadOnly = metaData.ReadOnly;
-            //dataColumn.MaxLength = _metaData.Size;
             switch (metaData.DataType)
             {
-                case MetaDataType.MetaDataInt :
+                case MetaDataType.MetaDataInt:
                     {
                         dataColumn.DataType = typeof(int);
                         break;
                     }
-                case MetaDataType.MetaDataDateTime :
+                case MetaDataType.MetaDataDateTime:
                     {
                         dataColumn.DataType = typeof(DateTime);
                         break;
                     }
-                case MetaDataType.MetaDataFloat :
+                case MetaDataType.MetaDataFloat:
                     {
                         dataColumn.DataType = typeof(float);
                         break;
                     }
-                case MetaDataType.MetaDataString :
+                case MetaDataType.MetaDataString:
                     {
                         dataColumn.DataType = typeof(string);
                         break;
                     }
-                case MetaDataType.MetaDataText :
+                case MetaDataType.MetaDataText:
                     {
                         dataColumn.DataType = typeof(string);
                         break;
                     }
             }
             DataTable.Columns.Add(dataColumn);
+        }
+
+        protected virtual WEntityForm CreateEntityForm(string model, object primaryKey)
+        {
+            return null;            
+        }
+
+        private void nbiAdd_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            CreateEntityForm(model, null);
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            CreateEntityForm(model, gridView1.GetFocusedRowCellValue("id"));
         }
     }
 }

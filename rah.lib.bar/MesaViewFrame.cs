@@ -16,5 +16,10 @@ namespace rah.lib.bar
             var response = connection.GetResponse(GetModelListUrl(model));
             buildResponse(response);
         }
+
+        protected override WEntityForm CreateEntityForm(string model, object primaryKey)
+        {
+            return base.CreateEntityForm(model, primaryKey);
+        }
     }
 }
