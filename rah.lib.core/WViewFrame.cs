@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
@@ -12,12 +11,12 @@ namespace rah.lib.core
         public WViewFrame()
         {
             InitializeComponent();
-            _dataTable = new DataTable();
-            _metaDataList = new List<MetaData>();           
+            DataTable = new DataTable();
+            MetaDataList = new List<MetaData>();            
         }
 
-        private DataTable _dataTable;
-        private IList<MetaData> _metaDataList;
+        private DataTable DataTable;
+        private IList<MetaData> MetaDataList;
         private string model;
 
         protected virtual void DoLoadModel(string model)
@@ -49,7 +48,7 @@ namespace rah.lib.core
             buildItens(itens);
 
             BindingSource bs = new BindingSource();
-            bs.DataSource = _dataTable;
+            bs.DataSource = DataTable;
             gridControl1.DataSource = bs.DataSource;            
             gridView1.RestoreLayoutFromRegistry($"SOFTWARE\\Rah\\{model}");
         }
@@ -59,46 +58,50 @@ namespace rah.lib.core
             foreach (var iten in itensValues)
             {
                 var results = JsonConvert.DeserializeObject<dynamic>(iten.ToString());
-                var row = _dataTable.NewRow();
+                var row = DataTable.NewRow();
                 foreach (var result in results)
                 {
                     var name = result.Name;
                     var value = result.Value;
-                    if (_dataTable.Columns.IndexOf(name) != -1)
+                    if (DataTable.Columns.IndexOf(name) != -1)
                     {
                         row[name] = value;                        
                     }
                 }
-                _dataTable.Rows.Add(row);
+                DataTable.Rows.Add(row);
             }
         }
 
         private void buildMetaData(dynamic metaDataValues)
         {
-            foreach(var metaData in metaDataValues)
+            foreach(var m in metaDataValues)
             {
-                var result = JsonConvert.DeserializeObject<dynamic>(metaData.Value.ToString());
-                var _metaData = new MetaData();
-                _metaData.Name = metaData.Name;
-                _metaData.Caption = result.caption;
-                _metaData.ReadOnly = result.readOnly;
+                var result = JsonConvert.DeserializeObject<dynamic>(m.Value.ToString());
+                var metaData = new MetaData();
+                metaData.Name = m.Name;
+                metaData.Caption = result.caption;
+                metaData.ReadOnly = result.readOnly;                
                 if (result.type == "string")
-                    _metaData.DataType = MetaDataType.MetaDataString;
+                {
+                    metaData.DataType = MetaDataType.MetaDataString;
+                }
                 else if (result.type == "int")
-                    _metaData.DataType = MetaDataType.MetaDataInt;
-                _metaDataList.Add(_metaData);
-                buildDataTable(_metaData);
+                {
+                    metaData.DataType = MetaDataType.MetaDataInt;
+                }                    
+                MetaDataList.Add(metaData);
+                buildDataTable(metaData);
             }
         }
 
-        private void buildDataTable(MetaData _metaData)
+        private void buildDataTable(MetaData metaData)
         {
             var dataColumn = new DataColumn();
-            dataColumn.ColumnName = _metaData.Name;
-            dataColumn.Caption = _metaData.Caption;
-            dataColumn.ReadOnly = _metaData.ReadOnly;
+            dataColumn.ColumnName = metaData.Name;
+            dataColumn.Caption = metaData.Caption;
+            dataColumn.ReadOnly = metaData.ReadOnly;
             //dataColumn.MaxLength = _metaData.Size;
-            switch (_metaData.DataType)
+            switch (metaData.DataType)
             {
                 case MetaDataType.MetaDataInt :
                     {
@@ -126,7 +129,7 @@ namespace rah.lib.core
                         break;
                     }
             }
-            _dataTable.Columns.Add(dataColumn);
+            DataTable.Columns.Add(dataColumn);
         }
     }
 }

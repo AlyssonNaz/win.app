@@ -59,21 +59,21 @@
             // mesaToolStripMenuItem
             // 
             this.mesaToolStripMenuItem.Name = "mesaToolStripMenuItem";
-            this.mesaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mesaToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.mesaToolStripMenuItem.Text = "Mesas";
             this.mesaToolStripMenuItem.Click += new System.EventHandler(this.mesaToolStripMenuItem_Click);
             // 
             // baresToolStripMenuItem
             // 
             this.baresToolStripMenuItem.Name = "baresToolStripMenuItem";
-            this.baresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.baresToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.baresToolStripMenuItem.Text = "Bares";
             this.baresToolStripMenuItem.Click += new System.EventHandler(this.baresToolStripMenuItem_Click);
             // 
             // usuáriosToolStripMenuItem
             // 
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.usuáriosToolStripMenuItem.Text = "Usuários";
             this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
             // 
