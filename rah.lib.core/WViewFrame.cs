@@ -49,7 +49,7 @@ namespace rah.lib.core
 
             BindingSource bs = new BindingSource();
             bs.DataSource = DataTable;
-            gridControl1.DataSource = bs.DataSource;            
+            gridControl1.DataSource = bs.DataSource;
             gridView1.RestoreLayoutFromRegistry($"SOFTWARE\\Rah\\{model}");
         }
 
@@ -61,12 +61,8 @@ namespace rah.lib.core
                 var row = DataTable.NewRow();
                 foreach (var result in results)
                 {
-                    var name = result.Name;
-                    var value = result.Value;
-                    if (DataTable.Columns.IndexOf(name) != -1)
-                    {
-                        row[name] = value;                        
-                    }
+                    if (DataTable.Columns.IndexOf(result.Name) != -1)
+                        row[result.Name] = result.Value;
                 }
                 DataTable.Rows.Add(row);
             }

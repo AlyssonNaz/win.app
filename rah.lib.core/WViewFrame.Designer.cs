@@ -99,13 +99,9 @@
             // 
             // gridView1
             // 
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsSelection.InvertSelection = true;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // WViewFrame
             // 
@@ -129,6 +125,6 @@
         protected DevExpress.XtraNavBar.NavBarControl navBarControl1;
         protected DevExpress.XtraGrid.GridControl gridControl1;
         protected System.Windows.Forms.TableLayoutPanel panLayoutClient;
-        protected DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }
