@@ -41,5 +41,10 @@ namespace rah
         {
             ShowGenericModel("user");
         }
+
+        private void contextoToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            ShowGenericModel("context");
+        }
     }
 }
