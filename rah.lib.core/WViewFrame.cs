@@ -62,7 +62,8 @@ namespace rah.lib.core
                 foreach (var result in results)
                 {
                     if (DataTable.Columns.IndexOf(result.Name) != -1)
-                        row[result.Name] = result.Value;
+                        if(result.Value.ToString() != "")
+                            row[result.Name] = result.Value;
                 }
                 DataTable.Rows.Add(row);
             }
@@ -76,15 +77,8 @@ namespace rah.lib.core
                 var metaData = new MetaData();
                 metaData.Name = m.Name;
                 metaData.Caption = result.caption;
-                metaData.ReadOnly = result.readOnly;
-                if (result.type == "string")
-                {
-                    metaData.DataType = MetaDataType.MetaDataString;
-                }
-                else if (result.type == "int")
-                {
-                    metaData.DataType = MetaDataType.MetaDataInt;
-                }
+                metaData.ReadOnly = result.readOnly != null ? result.readOnly : false;
+                metaData.DataType = MetaDataType.MetaDataString;
                 MetaDataList.Add(metaData);
                 buildDataTable(metaData);
             }
@@ -129,6 +123,10 @@ namespace rah.lib.core
 
         protected virtual WEntityForm CreateEntityForm(string model, object primaryKey)
         {
+            var metaData = new ConnectionHandler().GetResponse($"api/model/{model}/info");
+
+
+
             return null;            
         }
 
