@@ -31,5 +31,10 @@
         {
             return MainForm.Handle;
         }
+        
+        public IConnectionHandler GetConnection()
+        {
+            return new ConnectionHandler();
+        }
     }
 }

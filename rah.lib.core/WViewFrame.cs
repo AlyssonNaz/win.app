@@ -122,8 +122,9 @@ namespace rah.lib.core
         }
 
         protected virtual IWEntityForm CreateEntityForm(string model, object primaryKey = null)
-        {            
-            return new WEntityForm(new ConnectionHandler().GetResponse($"api/model/{model}/info"), model, primaryKey);
+        {
+            IConnectionHandler connection = WDMMain.GetInstance().GetConnection();
+            return new WEntityForm(connection.GetResponse($"api/model/{model}/info"), model, primaryKey);
         }
 
         private void nbiAdd_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

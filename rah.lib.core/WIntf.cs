@@ -31,6 +31,7 @@ namespace rah.lib.core
 
     public interface IConnectionHandler
     {
-
+        string GetResponse(string postData, string command);
+        string GetResponse(string command);
     }
 }

@@ -11,10 +11,8 @@ namespace rah.lib.bar
 
         protected override void DoLoadModel(string model)
         {
-            base.DoLoadModel(model);            
-            var connection = new ConnectionHandler();
-            var response = connection.GetResponse(GetModelListUrl(model));
-            buildResponse(response);
+            base.DoLoadModel(model);                                    
+            buildResponse(WDMMain.GetInstance().GetConnection().GetResponse(GetModelListUrl(model)));
         }
 
         protected override IWEntityForm CreateEntityForm(string model, object primaryKey)
