@@ -14,5 +14,10 @@
             var response = connection.GetResponse(GetModelListUrl(model));
             buildResponse(response);
         }
+
+        protected override WEntityForm CreateEntityForm(string model, object primaryKey = null)
+        {
+            return base.CreateEntityForm(model, primaryKey);
+        }
     }
 }

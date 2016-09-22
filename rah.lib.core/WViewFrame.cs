@@ -122,9 +122,8 @@ namespace rah.lib.core
         }
 
         protected virtual WEntityForm CreateEntityForm(string model, object primaryKey = null)
-        {
-            var metaData = new ConnectionHandler().GetResponse($"api/model/{model}/info");
-            return new WEntityForm(metaData, model, primaryKey);
+        {            
+            return new WEntityForm(new ConnectionHandler().GetResponse($"api/model/{model}/info"), model, primaryKey);
         }
 
         private void nbiAdd_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

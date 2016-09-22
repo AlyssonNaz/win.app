@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace rah.lib.core
 {
@@ -26,13 +20,27 @@ namespace rah.lib.core
             this.primaryKey = primaryKey;
             if (primaryKey != null)
             {
-                LoadObj();
+                LoadModel();
+            }
+            else
+            {
+                LoadEmptyModel();
             }          
         }
 
-        private void LoadObj()
+        private void CreateEntityFormFromMetaData()
         {
+        }
+
+        private void LoadModel()
+        {
+            CreateEntityFormFromMetaData();
             var obj = new ConnectionHandler().GetResponse($"api/model/{model}/{primaryKey}");
+        }
+
+        private void LoadEmptyModel()
+        {
+            CreateEntityFormFromMetaData();
         }
     }
 }

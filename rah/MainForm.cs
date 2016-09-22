@@ -47,5 +47,15 @@ namespace rah
         {
             ShowGenericModel("context");
         }
+
+        private void menuToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            ShowGenericModel("menu");
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            Close();
+        }
     }
 }
