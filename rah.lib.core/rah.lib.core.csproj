@@ -66,8 +66,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionHandler.cs" />
-    <Compile Include="IWEntity.cs" />
-    <Compile Include="IWList.cs" />
     <Compile Include="MetaData.cs" />
     <Compile Include="MetaDataType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,7 +82,6 @@
       <DependentUpon>WChildForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WDMMain.cs" />
-    <Compile Include="WEntity.cs" />
     <Compile Include="WEntityForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,7 +106,6 @@
     <Compile Include="WGenericViewFrame.Designer.cs">
       <DependentUpon>WGenericViewFrame.cs</DependentUpon>
     </Compile>
-    <Compile Include="WList.cs" />
     <Compile Include="WMasterFrame.cs">
       <SubType>UserControl</SubType>
     </Compile>
