@@ -26,5 +26,10 @@
         }
 
         public Token Token { private set; get; }
+        public WForm MainForm { set; get; }
+        public System.IntPtr MainFormHandle()
+        {
+            return MainForm.Handle;
+        }
     }
 }

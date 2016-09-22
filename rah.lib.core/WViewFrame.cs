@@ -121,23 +121,23 @@ namespace rah.lib.core
             DataTable.Columns.Add(dataColumn);
         }
 
-        protected virtual WEntityForm CreateEntityForm(string model, object primaryKey)
+        protected virtual WEntityForm CreateEntityForm(string model, object primaryKey = null)
         {
             var metaData = new ConnectionHandler().GetResponse($"api/model/{model}/info");
-
-
-
-            return null;            
+            return new WEntityForm(metaData, model, primaryKey);
         }
 
         private void nbiAdd_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            CreateEntityForm(model, null);
+            var entityForm = CreateEntityForm(model);
+            entityForm.MdiParent = WDMMain.GetInstance().MainForm;
+            entityForm.Show();
         }
-
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            CreateEntityForm(model, gridView1.GetFocusedRowCellValue("id"));
+            var entityForm = CreateEntityForm(model, gridView1.GetFocusedRowCellValue("id"));
+            entityForm.MdiParent = WDMMain.GetInstance().MainForm;
+            entityForm.Show();
         }
     }
 }

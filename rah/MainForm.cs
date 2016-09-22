@@ -7,7 +7,8 @@ namespace rah
     {
         public MainForm()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            WDMMain.GetInstance().MainForm = this;            
         }
 
         private void ShowGenericModel(string model)

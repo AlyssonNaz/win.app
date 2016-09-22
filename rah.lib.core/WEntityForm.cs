@@ -10,12 +10,29 @@ namespace rah.lib.core
 {
     public partial class WEntityForm : WChildForm
     {
-        private MetaData metadata;
+        private string metaData;
+        private string model;
+        private object primaryKey;
 
-        public WEntityForm(MetaData metadata)
+        public WEntityForm()
         {
-            InitializeComponent();
-            this.metadata = metadata;            
+            InitializeComponent();            
+        }
+
+        public WEntityForm(string metaData, string model, object primaryKey)
+        {
+            this.metaData = metaData;
+            this.model = model;
+            this.primaryKey = primaryKey;
+            if (primaryKey != null)
+            {
+                LoadObj();
+            }          
+        }
+
+        private void LoadObj()
+        {
+            var obj = new ConnectionHandler().GetResponse($"api/model/{model}/{primaryKey}");
         }
     }
 }

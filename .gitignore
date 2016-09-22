@@ -49,3 +49,4 @@ Temporary Items
 #dll e exe do projeto
 *.exe
 *.dll
+*.pdb
