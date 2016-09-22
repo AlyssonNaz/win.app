@@ -106,6 +106,7 @@
     <Compile Include="WGenericViewFrame.Designer.cs">
       <DependentUpon>WGenericViewFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="WIntf.cs" />
     <Compile Include="WMasterFrame.cs">
       <SubType>UserControl</SubType>
     </Compile>

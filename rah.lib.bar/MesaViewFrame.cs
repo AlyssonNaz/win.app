@@ -17,7 +17,7 @@ namespace rah.lib.bar
             buildResponse(response);
         }
 
-        protected override WEntityForm CreateEntityForm(string model, object primaryKey)
+        protected override IWEntityForm CreateEntityForm(string model, object primaryKey)
         {
             return base.CreateEntityForm(model, primaryKey);
         }

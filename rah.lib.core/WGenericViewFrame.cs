@@ -15,7 +15,7 @@
             buildResponse(response);
         }
 
-        protected override WEntityForm CreateEntityForm(string model, object primaryKey = null)
+        protected override IWEntityForm CreateEntityForm(string model, object primaryKey = null)
         {
             return base.CreateEntityForm(model, primaryKey);
         }

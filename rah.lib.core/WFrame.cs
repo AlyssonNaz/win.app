@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace rah.lib.core
 {
-    public partial class WFrame : UserControl
+    public partial class WFrame : UserControl, IWFrame
     {
         public WFrame()
         {

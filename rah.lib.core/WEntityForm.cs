@@ -2,7 +2,7 @@
 
 namespace rah.lib.core
 {
-    public partial class WEntityForm : WChildForm
+    public partial class WEntityForm : WChildForm, IWEntityForm
     {
         private string metaData;
         private string model;

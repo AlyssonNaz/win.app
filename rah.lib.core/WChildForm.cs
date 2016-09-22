@@ -1,6 +1,6 @@
 ﻿namespace rah.lib.core
 {
-    public partial class WChildForm : WForm
+    public partial class WChildForm : WForm, IWChildForm
     {
         public WChildForm()
         {

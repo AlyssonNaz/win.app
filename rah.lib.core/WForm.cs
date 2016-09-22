@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace rah.lib.core
 {
-    public partial class WForm : Form
+    public partial class WForm : Form, IWForm
     {
         public WForm()
         {

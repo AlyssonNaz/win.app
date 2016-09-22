@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace rah.lib.core
 {
-    public partial class WViewFrame : WFrame
+    public partial class WViewFrame : WFrame, IWViewFrame
     {
         public WViewFrame()
         {
@@ -121,7 +121,7 @@ namespace rah.lib.core
             DataTable.Columns.Add(dataColumn);
         }
 
-        protected virtual WEntityForm CreateEntityForm(string model, object primaryKey = null)
+        protected virtual IWEntityForm CreateEntityForm(string model, object primaryKey = null)
         {            
             return new WEntityForm(new ConnectionHandler().GetResponse($"api/model/{model}/info"), model, primaryKey);
         }
