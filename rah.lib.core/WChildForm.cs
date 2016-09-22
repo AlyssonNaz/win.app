@@ -8,9 +8,9 @@
             ViewFrame = null;
         }
 
-        public WViewFrame ViewFrame { set; get; }
+        public IWViewFrame ViewFrame { set; get; }
 
-        public void RegisterViewFrame(WViewFrame ViewFrame)
+        public void RegisterViewFrame(IWViewFrame ViewFrame)
         {
             this.ViewFrame = ViewFrame;
             this.ViewFrame.Parent = this;
@@ -20,7 +20,9 @@
         private void WChildForm_Leave(object sender, System.EventArgs e)
         {
             if (ViewFrame != null)
+            {
                 ViewFrame.DoLeave();
+            }
         }
     }
 }

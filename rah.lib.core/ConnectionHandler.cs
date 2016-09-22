@@ -4,7 +4,7 @@ using System.Text;
 
 namespace rah.lib.core
 {
-    public class ConnectionHandler
+    public class ConnectionHandler : IConnectionHandler
     {
         private const string URI = "https://seugarcom.herokuapp.com/";
 
