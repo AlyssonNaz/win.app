@@ -13,7 +13,7 @@ namespace rah.lib.core
         public static void LockWindowUpdate()
         {
             if (GLockWindowUpdate == 0)
-                LockWindowUpdate(WDMMain.GetInstance().MainForm.Handle);
+                LockWindowUpdate(WDMMain.GetInstance().MainFormHandle());
             GLockWindowUpdate++;
         }
 

@@ -86,6 +86,10 @@
             this.nbcProcess.Name = "nbcProcess";
             this.nbcProcess.OptionsNavPane.ExpandedWidth = 164;
             this.nbcProcess.OptionsNavPane.ShowExpandButton = false;
+            this.nbcProcess.OptionsNavPane.ShowGroupImageInHeader = true;
+            this.nbcProcess.OptionsNavPane.ShowOverflowButton = false;
+            this.nbcProcess.OptionsNavPane.ShowOverflowPanel = false;
+            this.nbcProcess.OptionsNavPane.ShowSplitter = false;
             this.nbcProcess.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.SideBar;
             this.nbcProcess.Size = new System.Drawing.Size(164, 519);
             this.nbcProcess.TabIndex = 0;
@@ -99,7 +103,9 @@
             this.nbgProcess.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiAdd),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDelete)});
+            this.nbgProcess.LargeImage = global::rah.lib.core.Properties.Resources.application_process;
             this.nbgProcess.Name = "nbgProcess";
+            this.nbgProcess.SmallImage = global::rah.lib.core.Properties.Resources.application_process;
             // 
             // gridControl1
             // 

@@ -63,6 +63,16 @@ namespace rah.lib.core.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap application_process {
+            get {
+                object obj = ResourceManager.GetObject("application_process", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete_file_icon {
             get {
                 object obj = ResourceManager.GetObject("delete_file_icon", resourceCulture);
