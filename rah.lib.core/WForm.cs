@@ -6,7 +6,7 @@ namespace rah.lib.core
     public partial class WForm : Form, IWForm
     {
         public WForm()
-        {
+        {            
             InitializeComponent();
             KeyPress += (sender, e) =>
             {

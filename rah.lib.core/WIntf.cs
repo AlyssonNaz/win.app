@@ -5,6 +5,7 @@ namespace rah.lib.core
     public interface IWForm
     {
         void Show();
+        DialogResult ShowDialog();        
     }
 
     public interface IWChildForm : IWForm
@@ -14,7 +15,7 @@ namespace rah.lib.core
 
     public interface IWEntityForm : IWChildForm
     {
-        
+                        
     }
 
     public interface IWFrame

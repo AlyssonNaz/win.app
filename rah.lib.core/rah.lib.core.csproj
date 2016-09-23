@@ -75,6 +75,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Token.cs" />
+    <Compile Include="Utility.cs" />
     <Compile Include="WChildForm.cs">
       <SubType>Form</SubType>
     </Compile>
