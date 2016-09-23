@@ -11,13 +11,12 @@ namespace rah
             WDMMain.GetInstance().MainForm = this;            
         }
 
-        private void ShowGenericModel(string model)
+        private void CreateViewFrame(IWViewFrame viewFrame, string model)
         {
             Utility.LockWindowUpdate();
             try
             {
-                var childForm = new WChildForm();
-                var viewFrame = new WGenericViewFrame();
+                var childForm = new WChildForm();                
                 childForm.RegisterViewFrame(viewFrame);
                 childForm.ViewFrame.LoadModel(model);
                 childForm.MdiParent = this;
@@ -30,23 +29,14 @@ namespace rah
             }
         }
 
+        private void ShowGenericModel(string model)
+        {
+            CreateViewFrame(new WGenericViewFrame(), model);
+        }
+
         private void mesaToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            Utility.LockWindowUpdate();
-            try
-            {
-                var childForm = new WChildForm();
-                var mesa = new MesaViewFrame();
-                childForm.RegisterViewFrame(mesa);
-                childForm.ViewFrame.LoadModel("table");
-                childForm.MdiParent = this;
-                childForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-                childForm.Show();
-            }
-            finally
-            {
-                Utility.UnLockWindowUpdate();
-            }
+            CreateViewFrame(new MesaViewFrame(), "table");
         }
 
         private void baresToolStripMenuItem_Click(object sender, System.EventArgs e)
