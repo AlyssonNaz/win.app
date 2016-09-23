@@ -1,5 +1,6 @@
 ﻿using rah.lib.core;
 using rah.lib.bar;
+using System;
 
 namespace rah
 {
@@ -30,13 +31,13 @@ namespace rah
         }
 
         private void ShowGenericModel(string model)
-        {
-            CreateViewFrame(new WGenericViewFrame(), model);
+        {            
+            CreateViewFrame(Activator.CreateInstance<WGenericViewFrame>(), model);
         }
 
         private void mesaToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            CreateViewFrame(new MesaViewFrame(), "table");
+        {            
+            CreateViewFrame(Activator.CreateInstance<MesaViewFrame>(), "table");
         }
 
         private void baresToolStripMenuItem_Click(object sender, System.EventArgs e)
