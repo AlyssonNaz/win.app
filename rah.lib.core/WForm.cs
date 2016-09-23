@@ -6,7 +6,7 @@ namespace rah.lib.core
     public partial class WForm : Form, IWForm
     {
         public WForm()
-        {            
+        {
             InitializeComponent();
             KeyPress += (sender, e) =>
             {
@@ -19,8 +19,19 @@ namespace rah.lib.core
 
             KeyDown += (sender, e) =>
             {
-                
+                if (KeyCtrlPlusWEnable())
+                {
+                    if (e.KeyData == (Keys.Control | Keys.W))
+                    {
+                        Close();
+                    }
+                }
             };
+        }
+
+        protected virtual bool KeyCtrlPlusWEnable()
+        {
+            return true;
         }
     }
 }

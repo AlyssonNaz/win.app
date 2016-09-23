@@ -31,5 +31,10 @@ namespace rah
         {            
             Close();
         }
+
+        protected override bool KeyCtrlPlusWEnable()
+        {
+            return false;
+        }
     }
 }
