@@ -33,7 +33,7 @@
             // WEntityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(517, 333);
+            this.ClientSize = new System.Drawing.Size(329, 206);
             this.Name = "WEntityForm";
             this.Text = "WEntityForm";
             this.ResumeLayout(false);

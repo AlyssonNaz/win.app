@@ -93,3 +93,9 @@ D:\Projetos\rah\rah.lib.admin\bin\Debug\ru\DevExpress.Pdf.v15.2.Core.resources.d
 D:\Projetos\rah\rah.lib.admin\obj\Debug\rah.lib.admin.csprojResolveAssemblyReference.cache
 D:\Projetos\rah\rah.lib.admin\obj\Debug\rah.lib.admin.dll
 D:\Projetos\rah\rah.lib.admin\obj\Debug\rah.lib.admin.pdb
+D:\Projetos\rah\rah.lib.admin\bin\Debug\DevExpress.XtraVerticalGrid.v15.2.dll
+D:\Projetos\rah\rah.lib.admin\bin\Debug\DevExpress.XtraVerticalGrid.v15.2.xml
+D:\Projetos\rah\rah.lib.admin\bin\Debug\de\DevExpress.XtraVerticalGrid.v15.2.resources.dll
+D:\Projetos\rah\rah.lib.admin\bin\Debug\es\DevExpress.XtraVerticalGrid.v15.2.resources.dll
+D:\Projetos\rah\rah.lib.admin\bin\Debug\ja\DevExpress.XtraVerticalGrid.v15.2.resources.dll
+D:\Projetos\rah\rah.lib.admin\bin\Debug\ru\DevExpress.XtraVerticalGrid.v15.2.resources.dll

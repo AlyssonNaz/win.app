@@ -77,6 +77,8 @@ namespace rah.lib.core
                 var metaData = new MetaData();
                 metaData.Name = m.Name;
                 metaData.Caption = result.caption;
+                if (metaData.Caption == "")
+                    metaData.Caption = m.GetType().Name;
                 metaData.ReadOnly = result.readOnly != null ? result.readOnly : false;
                 metaData.DataType = MetaDataType.MetaDataString;
                 MetaDataList.Add(metaData);
@@ -123,21 +125,20 @@ namespace rah.lib.core
 
         protected virtual IWEntityForm CreateEntityForm(string model, object primaryKey = null)
         {
-            IConnectionHandler connection = WDMMain.GetInstance().GetConnection();
-            return new WEntityForm(connection.GetResponse($"api/model/{model}/info"), model, primaryKey);
+            IConnectionHandler connection = WDMMain.GetInstance().GetConnection();            
+            var entityForm = new WEntityForm(connection.GetResponse($"api/model/{model}/info"), model, primaryKey);
+            entityForm.MdiParent = WDMMain.GetInstance().MainForm;
+            entityForm.Show();
+            return entityForm;
         }
 
         private void nbiAdd_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            var entityForm = CreateEntityForm(model);
-            entityForm.MdiParent = WDMMain.GetInstance().MainForm;
-            entityForm.Show();
+            CreateEntityForm(model);
         }
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            var entityForm = CreateEntityForm(model, gridView1.GetFocusedRowCellValue("id"));
-            entityForm.MdiParent = WDMMain.GetInstance().MainForm;
-            entityForm.Show();
+            CreateEntityForm(model, gridView1.GetFocusedRowCellValue("id"));
         }
     }
 }

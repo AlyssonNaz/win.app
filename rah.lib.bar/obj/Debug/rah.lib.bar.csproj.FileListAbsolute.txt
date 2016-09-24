@@ -92,3 +92,9 @@ D:\Projetos\rah\rah.lib.bar\obj\Debug\rah.lib.bar.csprojResolveAssemblyReference
 D:\Projetos\rah\rah.lib.bar\obj\Debug\rah.lib.bar.dll.licenses
 D:\Projetos\rah\rah.lib.bar\obj\Debug\rah.lib.bar.dll
 D:\Projetos\rah\rah.lib.bar\obj\Debug\rah.lib.bar.pdb
+D:\Projetos\rah\rah.lib.bar\bin\Debug\DevExpress.XtraVerticalGrid.v15.2.dll
+D:\Projetos\rah\rah.lib.bar\bin\Debug\DevExpress.XtraVerticalGrid.v15.2.xml
+D:\Projetos\rah\rah.lib.bar\bin\Debug\de\DevExpress.XtraVerticalGrid.v15.2.resources.dll
+D:\Projetos\rah\rah.lib.bar\bin\Debug\es\DevExpress.XtraVerticalGrid.v15.2.resources.dll
+D:\Projetos\rah\rah.lib.bar\bin\Debug\ja\DevExpress.XtraVerticalGrid.v15.2.resources.dll
+D:\Projetos\rah\rah.lib.bar\bin\Debug\ru\DevExpress.XtraVerticalGrid.v15.2.resources.dll

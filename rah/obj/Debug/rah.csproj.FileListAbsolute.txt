@@ -112,3 +112,9 @@ D:\Projetos\rah\rah\obj\Debug\rah.Properties.Resources.resources
 D:\Projetos\rah\rah\obj\Debug\rah.csproj.GenerateResource.Cache
 D:\Projetos\rah\rah\obj\Debug\rah.exe
 D:\Projetos\rah\rah\obj\Debug\rah.pdb
+D:\Projetos\rah\rah\bin\Debug\DevExpress.XtraVerticalGrid.v15.2.dll
+D:\Projetos\rah\rah\bin\Debug\DevExpress.XtraVerticalGrid.v15.2.xml
+D:\Projetos\rah\rah\bin\Debug\de\DevExpress.XtraVerticalGrid.v15.2.resources.dll
+D:\Projetos\rah\rah\bin\Debug\es\DevExpress.XtraVerticalGrid.v15.2.resources.dll
+D:\Projetos\rah\rah\bin\Debug\ja\DevExpress.XtraVerticalGrid.v15.2.resources.dll
+D:\Projetos\rah\rah\bin\Debug\ru\DevExpress.XtraVerticalGrid.v15.2.resources.dll
