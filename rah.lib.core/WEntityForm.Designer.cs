@@ -28,18 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.vGridControl1 = new DevExpress.XtraVerticalGrid.VGridControl();
+            ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // vGridControl1
+            // 
+            this.vGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vGridControl1.Location = new System.Drawing.Point(0, 0);
+            this.vGridControl1.Name = "vGridControl1";
+            this.vGridControl1.Size = new System.Drawing.Size(518, 282);
+            this.vGridControl1.TabIndex = 0;
             // 
             // WEntityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(329, 206);
+            this.ClientSize = new System.Drawing.Size(518, 282);
+            this.Controls.Add(this.vGridControl1);
             this.Name = "WEntityForm";
             this.Text = "WEntityForm";
+            ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private DevExpress.XtraVerticalGrid.VGridControl vGridControl1;
     }
 }

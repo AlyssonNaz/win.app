@@ -15,13 +15,9 @@ namespace rah.lib.core
         private DataTable DataTable;
         private IList<MetaData> MetaDataList;
 
-        public WEntityForm()
-        {
-            InitializeComponent();
-        }
-
         public WEntityForm(string metaData, string model, object primaryKey)
         {
+            InitializeComponent();
             DataTable = new DataTable();
             MetaDataList = new List<MetaData>();
 
@@ -56,11 +52,7 @@ namespace rah.lib.core
             DataTable.Rows.Add(row);
             BindingSource bs = new BindingSource();
             bs.DataSource = DataTable;
-            VGridControl grid = new VGridControl();
-            grid.Parent = this;
-            grid.Dock = DockStyle.Fill;
-            grid.DataSource = bs.DataSource;
-            grid.RowHeaderWidth = 170;
+            vGridControl1.DataSource = bs.DataSource;
         }
 
         private void buildMetaData(dynamic metaDataValues)
