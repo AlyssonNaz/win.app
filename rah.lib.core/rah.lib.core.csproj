@@ -93,12 +93,6 @@
     <Compile Include="ucEditorInt.Designer.cs">
       <DependentUpon>ucEditorInt.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucEditorString.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucEditorString.Designer.cs">
-      <DependentUpon>ucEditorString.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utility.cs" />
     <Compile Include="WChildForm.cs">
       <SubType>Form</SubType>
