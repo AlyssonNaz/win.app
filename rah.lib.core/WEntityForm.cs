@@ -106,7 +106,7 @@ namespace rah.lib.core
                     }
                 case MetaDataType.Text:
                     {
-                        
+                        ucEditor = new ucEditorText();
                         break;
                     }
             }
@@ -116,7 +116,7 @@ namespace rah.lib.core
             var readOnly = metaData.ReadOnly || metaData.Name.Equals("createdAt") || metaData.Name.Equals("updatedAt");
             ucEditor.SetRequired(metaData.Required);
             ucEditor.SetReadOnly(readOnly);
-            panVertialGrid.Height += 24;
+            panVertialGrid.Height += ucEditor.Height;
             dicComp.Add(metaData.Name, ucEditor);
         }
 

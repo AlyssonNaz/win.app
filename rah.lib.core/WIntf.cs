@@ -42,5 +42,6 @@ namespace rah.lib.core
         object Value { set; get; }
         void SetRequired(bool required);
         void SetReadOnly(bool readOnly);
-    }
+        int Height { get; }
+    }    
 }

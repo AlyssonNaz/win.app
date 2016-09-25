@@ -93,6 +93,12 @@
     <Compile Include="ucEditorInt.Designer.cs">
       <DependentUpon>ucEditorInt.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucEditorText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEditorText.Designer.cs">
+      <DependentUpon>ucEditorText.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility.cs" />
     <Compile Include="WChildForm.cs">
       <SubType>Form</SubType>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucEditorInt.resx">
       <DependentUpon>ucEditorInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucEditorText.resx">
+      <DependentUpon>ucEditorText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WChildForm.resx">
       <DependentUpon>WChildForm.cs</DependentUpon>
