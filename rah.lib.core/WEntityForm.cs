@@ -79,8 +79,9 @@ namespace rah.lib.core
             ucEditor.Caption = metaData.Caption;
             ucEditor.Parent = panVertialGrid;
             ucEditor.Dock = DockStyle.Bottom;
+            var readOnly = metaData.ReadOnly || metaData.Name.Equals("createdAt") || metaData.Name.Equals("updatedAt");
             ucEditor.SetRequired(metaData.Required);
-            ucEditor.SetReadOnly(metaData.ReadOnly);
+            ucEditor.SetReadOnly(readOnly);
             panVertialGrid.Height += 24;            
             switch (metaData.DataType)
             {

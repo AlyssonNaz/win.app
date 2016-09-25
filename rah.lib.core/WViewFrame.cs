@@ -125,11 +125,19 @@ namespace rah.lib.core
 
         protected virtual IWEntityForm CreateEntityForm(string model, object primaryKey = null)
         {
-            var connection = WDMMain.GetInstance().GetConnection();            
-            var entityForm = new WEntityForm(connection.GetResponse($"api/model/{model}/info"), model, primaryKey);
-            entityForm.MdiParent = WDMMain.GetInstance().MainForm;
-            entityForm.Show();
-            return entityForm;
+            Utility.LockWindowUpdate();
+            try
+            {
+                var connection = WDMMain.GetInstance().GetConnection();
+                var entityForm = new WEntityForm(connection.GetResponse($"api/model/{model}/info"), model, primaryKey);
+                entityForm.MdiParent = WDMMain.GetInstance().MainForm;
+                entityForm.Show();
+                return entityForm;
+            }
+            finally
+            {
+                Utility.UnLockWindowUpdate();
+            }            
         }
 
         private void nbiAdd_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
