@@ -28,32 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.vGridControl1 = new DevExpress.XtraVerticalGrid.VGridControl();
-            ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).BeginInit();
+            this.panTop = new System.Windows.Forms.Panel();
+            this.lbTop = new System.Windows.Forms.Label();
+            this.panClient = new System.Windows.Forms.Panel();
+            this.panTop.SuspendLayout();
             this.SuspendLayout();
             // 
-            // vGridControl1
+            // panTop
             // 
-            this.vGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vGridControl1.Location = new System.Drawing.Point(0, 0);
-            this.vGridControl1.Name = "vGridControl1";
-            this.vGridControl1.Size = new System.Drawing.Size(518, 282);
-            this.vGridControl1.TabIndex = 0;
+            this.panTop.Controls.Add(this.lbTop);
+            this.panTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panTop.Location = new System.Drawing.Point(0, 0);
+            this.panTop.Name = "panTop";
+            this.panTop.Size = new System.Drawing.Size(483, 34);
+            this.panTop.TabIndex = 0;
+            // 
+            // lbTop
+            // 
+            this.lbTop.AutoSize = true;
+            this.lbTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTop.Location = new System.Drawing.Point(3, 8);
+            this.lbTop.Name = "lbTop";
+            this.lbTop.Size = new System.Drawing.Size(113, 16);
+            this.lbTop.TabIndex = 0;
+            this.lbTop.Text = "[Entity Caption]";
+            // 
+            // panClient
+            // 
+            this.panClient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panClient.Location = new System.Drawing.Point(0, 34);
+            this.panClient.Name = "panClient";
+            this.panClient.Size = new System.Drawing.Size(483, 252);
+            this.panClient.TabIndex = 1;
             // 
             // WEntityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(518, 282);
-            this.Controls.Add(this.vGridControl1);
+            this.ClientSize = new System.Drawing.Size(483, 286);
+            this.Controls.Add(this.panClient);
+            this.Controls.Add(this.panTop);
             this.Name = "WEntityForm";
             this.Text = "WEntityForm";
-            ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).EndInit();
+            this.panTop.ResumeLayout(false);
+            this.panTop.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraVerticalGrid.VGridControl vGridControl1;
+        private System.Windows.Forms.Panel panTop;
+        private System.Windows.Forms.Label lbTop;
+        private System.Windows.Forms.Panel panClient;
     }
 }

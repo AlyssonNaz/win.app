@@ -80,7 +80,7 @@ namespace rah.lib.core
                 if (metaData.Caption == "")
                     metaData.Caption = m.GetType().Name;
                 metaData.ReadOnly = result.readOnly != null ? result.readOnly : false;
-                metaData.DataType = MetaDataType.MetaDataString;
+                metaData.DataType = MetaDataType.String;
                 MetaDataList.Add(metaData);
                 buildDataTable(metaData);
             }
@@ -94,27 +94,27 @@ namespace rah.lib.core
             dataColumn.ReadOnly = metaData.ReadOnly;
             switch (metaData.DataType)
             {
-                case MetaDataType.MetaDataInt:
+                case MetaDataType.Int:
                     {
                         dataColumn.DataType = typeof(int);
                         break;
                     }
-                case MetaDataType.MetaDataDateTime:
+                case MetaDataType.DateTime:
                     {
                         dataColumn.DataType = typeof(DateTime);
                         break;
                     }
-                case MetaDataType.MetaDataFloat:
+                case MetaDataType.Float:
                     {
                         dataColumn.DataType = typeof(float);
                         break;
                     }
-                case MetaDataType.MetaDataString:
+                case MetaDataType.String:
                     {
                         dataColumn.DataType = typeof(string);
                         break;
                     }
-                case MetaDataType.MetaDataText:
+                case MetaDataType.Text:
                     {
                         dataColumn.DataType = typeof(string);
                         break;

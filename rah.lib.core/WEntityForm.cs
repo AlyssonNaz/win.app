@@ -14,12 +14,14 @@ namespace rah.lib.core
         private object primaryKey;
         private DataTable DataTable;
         private IList<MetaData> MetaDataList;
+        private Dictionary<string, ucEditor> dicComp;
 
         public WEntityForm(string metaData, string model, object primaryKey)
         {
             InitializeComponent();
             DataTable = new DataTable();
             MetaDataList = new List<MetaData>();
+            dicComp = new Dictionary<string, ucEditor>();
 
             this.metaData = metaData;
             this.model = model;
@@ -37,22 +39,20 @@ namespace rah.lib.core
         private void CreateEntityFormFromMetaData(string obj = "")
         {
             var Data = JsonConvert.DeserializeObject<dynamic>(metaData);
-            buildMetaData(Data.metadata);
-            var row = DataTable.NewRow();
+            buildMetaData(Data.metadata);            
             if (obj != "")
             {
                 var results = JsonConvert.DeserializeObject<dynamic>(obj);
                 foreach (var result in results)
                 {
-                    if (DataTable.Columns.IndexOf(result.Name) != -1)
-                        if (result.Value.ToString() != "")
-                            row[result.Name] = result.Value;
+                    if (dicComp.ContainsKey(result.Name))
+                    {
+                        ucEditor ucEditor = null;
+                        dicComp.TryGetValue(result.Name, out ucEditor);
+                        ucEditor.Value = result.Value;
+                    }
                 }                
             }
-            DataTable.Rows.Add(row);
-            BindingSource bs = new BindingSource();
-            bs.DataSource = DataTable;
-            vGridControl1.DataSource = bs.DataSource;
         }
 
         private void buildMetaData(dynamic metaDataValues)
@@ -64,7 +64,18 @@ namespace rah.lib.core
                 metaData.Name = m.Name;
                 metaData.Caption = result.caption;
                 metaData.ReadOnly = result.readOnly != null ? result.readOnly : false;
-                metaData.DataType = MetaDataType.MetaDataString;
+                if (result.type != null)
+                {
+                    if(result.type.ToString() == "STRING")
+                    {
+                        metaData.DataType = MetaDataType.String;
+                    }
+                    else if (result.type.ToString() == "INTEGER")
+                    {
+                        metaData.DataType = MetaDataType.Int;
+                    }
+
+                }                
                 MetaDataList.Add(metaData);
                 buildDataTable(metaData);
             }
@@ -72,39 +83,41 @@ namespace rah.lib.core
 
         private void buildDataTable(MetaData metaData)
         {
-            var dataColumn = new DataColumn();
-            dataColumn.ColumnName = metaData.Name;
-            dataColumn.Caption = metaData.Caption;
-            dataColumn.ReadOnly = metaData.ReadOnly;
+            var ucEditor = new ucEditor();
+            ucEditor.Caption = metaData.Caption;
+            ucEditor.Parent = panClient;
+            ucEditor.Dock = DockStyle.Top;
+            ucEditor.SetRequired(metaData.Required);
+            ucEditor.SetReadOnly(metaData.ReadOnly);
             switch (metaData.DataType)
             {
-                case MetaDataType.MetaDataInt:
+                case MetaDataType.Int:
                     {
-                        dataColumn.DataType = typeof(int);
+                        ucEditor.CreateIntEditor();
                         break;
                     }
-                case MetaDataType.MetaDataDateTime:
+                case MetaDataType.DateTime:
                     {
-                        dataColumn.DataType = typeof(DateTime);
+                        ucEditor.CreateDateTimeEditor();
                         break;
                     }
-                case MetaDataType.MetaDataFloat:
+                case MetaDataType.Float:
                     {
-                        dataColumn.DataType = typeof(float);
+                        ucEditor.CreateFloatEditor();
                         break;
                     }
-                case MetaDataType.MetaDataString:
+                case MetaDataType.String:
                     {
-                        dataColumn.DataType = typeof(string);
+                        ucEditor.CreateStringEditor();                        
                         break;
                     }
-                case MetaDataType.MetaDataText:
+                case MetaDataType.Text:
                     {
-                        dataColumn.DataType = typeof(string);
+                        ucEditor.CreateMemoEditor();
                         break;
                     }
             }
-            DataTable.Columns.Add(dataColumn);
+            dicComp.Add(metaData.Name, ucEditor);   
         }
 
         private void LoadModel()

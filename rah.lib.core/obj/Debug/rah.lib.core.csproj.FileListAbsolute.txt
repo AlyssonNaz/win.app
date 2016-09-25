@@ -120,3 +120,4 @@ D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.dll.licenses
 D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.dll
 D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.pdb
 D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.csprojResolveAssemblyReference.cache
+D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.ucEditor.resources

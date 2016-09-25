@@ -75,6 +75,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Token.cs" />
+    <Compile Include="ucEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEditor.Designer.cs">
+      <DependentUpon>ucEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility.cs" />
     <Compile Include="WChildForm.cs">
       <SubType>Form</SubType>
@@ -132,6 +138,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucEditor.resx">
+      <DependentUpon>ucEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WChildForm.resx">
       <DependentUpon>WChildForm.cs</DependentUpon>

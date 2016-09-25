@@ -5,10 +5,10 @@ namespace rah.lib.core
     [Flags]
     public enum MetaDataType
     {
-        MetaDataInt = 0,
-        MetaDataString = 2,
-        MetaDataDateTime = 4,
-        MetaDataFloat = 8,
-        MetaDataText = 16
+        Int = 0,
+        String = 2,
+        DateTime = 4,
+        Float = 8,
+        Text = 16
     }
 }
