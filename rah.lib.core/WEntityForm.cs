@@ -22,6 +22,7 @@ namespace rah.lib.core
             DataTable = new DataTable();
             MetaDataList = new List<MetaData>();
             dicComp = new Dictionary<string, ucEditor>();
+            panVertialGrid.Height = 0;
 
             this.metaData = metaData;
             this.model = model;
@@ -48,7 +49,7 @@ namespace rah.lib.core
                     if (dicComp.ContainsKey(result.Name))
                     {
                         ucEditor ucEditor = null;
-                        dicComp.TryGetValue(result.Name, out ucEditor);
+                        dicComp.TryGetValue(result.Name, out ucEditor);                       
                         ucEditor.Value = result.Value;
                     }
                 }                
@@ -57,6 +58,7 @@ namespace rah.lib.core
 
         private void buildMetaData(dynamic metaDataValues)
         {
+            int index = 0;
             foreach (var m in metaDataValues)
             {
                 var result = JsonConvert.DeserializeObject<dynamic>(m.Value.ToString());
@@ -74,21 +76,22 @@ namespace rah.lib.core
                     {
                         metaData.DataType = MetaDataType.Int;
                     }
-
                 }                
                 MetaDataList.Add(metaData);
-                buildDataTable(metaData);
+                CreateUcEditor(metaData, index);
+                index++;
             }
         }
 
-        private void buildDataTable(MetaData metaData)
+        private void CreateUcEditor(MetaData metaData, int index)
         {
             var ucEditor = new ucEditor();
             ucEditor.Caption = metaData.Caption;
-            ucEditor.Parent = panClient;
-            ucEditor.Dock = DockStyle.Top;
+            ucEditor.Parent = panVertialGrid;
+            ucEditor.Dock = DockStyle.Bottom;
             ucEditor.SetRequired(metaData.Required);
             ucEditor.SetReadOnly(metaData.ReadOnly);
+            panVertialGrid.Height += 24;            
             switch (metaData.DataType)
             {
                 case MetaDataType.Int:

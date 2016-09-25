@@ -31,7 +31,9 @@
             this.panTop = new System.Windows.Forms.Panel();
             this.lbTop = new System.Windows.Forms.Label();
             this.panClient = new System.Windows.Forms.Panel();
+            this.panVertialGrid = new System.Windows.Forms.Panel();
             this.panTop.SuspendLayout();
+            this.panClient.SuspendLayout();
             this.SuspendLayout();
             // 
             // panTop
@@ -55,11 +57,20 @@
             // 
             // panClient
             // 
+            this.panClient.Controls.Add(this.panVertialGrid);
             this.panClient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panClient.Location = new System.Drawing.Point(0, 34);
             this.panClient.Name = "panClient";
             this.panClient.Size = new System.Drawing.Size(483, 252);
             this.panClient.TabIndex = 1;
+            // 
+            // panVertialGrid
+            // 
+            this.panVertialGrid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panVertialGrid.Location = new System.Drawing.Point(0, 0);
+            this.panVertialGrid.Name = "panVertialGrid";
+            this.panVertialGrid.Size = new System.Drawing.Size(483, 24);
+            this.panVertialGrid.TabIndex = 0;
             // 
             // WEntityForm
             // 
@@ -71,6 +82,7 @@
             this.Text = "WEntityForm";
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();
+            this.panClient.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -80,5 +92,6 @@
         private System.Windows.Forms.Panel panTop;
         private System.Windows.Forms.Label lbTop;
         private System.Windows.Forms.Panel panClient;
+        private System.Windows.Forms.Panel panVertialGrid;
     }
 }
