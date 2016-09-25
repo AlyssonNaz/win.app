@@ -61,6 +61,7 @@ namespace rah.lib.core
         public void SetReadOnly(bool readOnly)
         {
             buttonEdit.ReadOnly = readOnly;
+            buttonEdit.TabStop = !readOnly;
         }
     }
 }
