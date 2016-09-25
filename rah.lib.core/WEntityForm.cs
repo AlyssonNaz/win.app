@@ -23,18 +23,10 @@ namespace rah.lib.core
             MetaDataList = new List<MetaData>();
             dicComp = new Dictionary<string, ucEditor>();
             panVertialGrid.Height = 0;
-
             this.metaData = metaData;
             this.model = model;
             this.primaryKey = primaryKey;
-            if (primaryKey != null)
-            {
-                LoadModel();
-            }
-            else
-            {
-                LoadEmptyModel();
-            }          
+            LoadModel();
         }
 
         private void CreateEntityFormFromMetaData(string obj = "")
@@ -57,8 +49,7 @@ namespace rah.lib.core
         }
 
         private void buildMetaData(dynamic metaDataValues)
-        {
-            int index = 0;
+        {            
             foreach (var m in metaDataValues)
             {
                 var result = JsonConvert.DeserializeObject<dynamic>(m.Value.ToString());
@@ -78,12 +69,11 @@ namespace rah.lib.core
                     }
                 }                
                 MetaDataList.Add(metaData);
-                CreateUcEditor(metaData, index);
-                index++;
+                CreateUcEditor(metaData);                
             }
         }
 
-        private void CreateUcEditor(MetaData metaData, int index)
+        private void CreateUcEditor(MetaData metaData)
         {
             var ucEditor = new ucEditor();
             ucEditor.Caption = metaData.Caption;
@@ -125,17 +115,13 @@ namespace rah.lib.core
 
         private void LoadModel()
         {
-            var obj = new ConnectionHandler().GetResponse($"api/model/{model}/{primaryKey}");
-            CreateEntityFormFromMetaData(obj);
-        }
-
-        private void LoadEmptyModel()
-        {
-            CreateEntityFormFromMetaData();
-        }
-
-        protected virtual void DoBeforeCreate()
-        {
+            if (primaryKey == null)
+                CreateEntityFormFromMetaData();
+            else
+            {
+                var obj = new ConnectionHandler().GetResponse($"api/model/{model}/{primaryKey}");
+                CreateEntityFormFromMetaData(obj);
+            }
         }
     }
 }
