@@ -125,7 +125,7 @@ namespace rah.lib.core
 
         protected virtual IWEntityForm CreateEntityForm(string model, object primaryKey = null)
         {
-            IConnectionHandler connection = WDMMain.GetInstance().GetConnection();            
+            var connection = WDMMain.GetInstance().GetConnection();            
             var entityForm = new WEntityForm(connection.GetResponse($"api/model/{model}/info"), model, primaryKey);
             entityForm.MdiParent = WDMMain.GetInstance().MainForm;
             entityForm.Show();

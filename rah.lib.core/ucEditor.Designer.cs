@@ -53,9 +53,10 @@
             // lbEditor
             // 
             this.lbEditor.AutoSize = true;
+            this.lbEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEditor.Location = new System.Drawing.Point(3, 0);
             this.lbEditor.Name = "lbEditor";
-            this.lbEditor.Size = new System.Drawing.Size(35, 13);
+            this.lbEditor.Size = new System.Drawing.Size(51, 20);
             this.lbEditor.TabIndex = 0;
             this.lbEditor.Text = "label1";
             // 

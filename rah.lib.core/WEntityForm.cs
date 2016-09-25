@@ -119,8 +119,8 @@ namespace rah.lib.core
                 CreateEntityFormFromMetaData();
             else
             {
-                var obj = new ConnectionHandler().GetResponse($"api/model/{model}/{primaryKey}");
-                CreateEntityFormFromMetaData(obj);
+                var connection = WDMMain.GetInstance().GetConnection();
+                CreateEntityFormFromMetaData(connection.GetResponse($"api/model/{model}/{primaryKey}"));
             }
         }
     }
