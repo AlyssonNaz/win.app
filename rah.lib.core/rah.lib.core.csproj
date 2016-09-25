@@ -81,6 +81,24 @@
     <Compile Include="ucEditor.Designer.cs">
       <DependentUpon>ucEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucEditorDateTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEditorDateTime.Designer.cs">
+      <DependentUpon>ucEditorDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucEditorInt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEditorInt.Designer.cs">
+      <DependentUpon>ucEditorInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucEditorString.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucEditorString.Designer.cs">
+      <DependentUpon>ucEditorString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility.cs" />
     <Compile Include="WChildForm.cs">
       <SubType>Form</SubType>
@@ -142,6 +160,12 @@
     <EmbeddedResource Include="ucEditor.resx">
       <DependentUpon>ucEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucEditorDateTime.resx">
+      <DependentUpon>ucEditorDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucEditorInt.resx">
+      <DependentUpon>ucEditorInt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WChildForm.resx">
       <DependentUpon>WChildForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +199,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\application-lightning-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\register-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,7 +9,7 @@ namespace rah
         public MainForm()
         {
             InitializeComponent();
-            WDMMain.GetInstance().MainForm = this;            
+            WDMMain.GetInstance().MainForm = this;                        
         }
 
         private void CreateViewFrame(IWViewFrame viewFrame, string model)

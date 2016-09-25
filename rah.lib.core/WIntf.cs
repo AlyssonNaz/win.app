@@ -35,4 +35,12 @@ namespace rah.lib.core
         string GetResponse(string postData, string command);
         string GetResponse(string command);
     }
+
+    public interface IButtonEditor : IWFrame
+    {
+        string Caption { set; get; }
+        object Value { set; get; }
+        void SetRequired(bool required);
+        void SetReadOnly(bool readOnly);
+    }
 }

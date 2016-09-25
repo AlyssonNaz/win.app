@@ -2,14 +2,13 @@
 
 namespace rah.lib.core
 {
-    public partial class ucEditor : WFrame, IButtonEditor
-    {        
-        public ucEditor()
+    public partial class ucEditorInt : WFrame, IButtonEditor
+    {
+        public ucEditorInt()
         {
             InitializeComponent();
             lpContainer.ColumnStyles[0].SizeType = System.Windows.Forms.SizeType.Absolute;
             lpContainer.ColumnStyles[0].Width = 100;
-            buttonEdit.Properties.Buttons.Clear();
         }
 
         public string Caption

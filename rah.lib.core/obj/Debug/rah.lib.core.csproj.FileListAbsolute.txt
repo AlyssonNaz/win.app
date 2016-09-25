@@ -108,6 +108,7 @@ D:\Projetos\rah\rah.lib.core\bin\Debug\es\DevExpress.Pdf.v15.2.Core.resources.dl
 D:\Projetos\rah\rah.lib.core\bin\Debug\ja\DevExpress.Pdf.v15.2.Core.resources.dll
 D:\Projetos\rah\rah.lib.core\bin\Debug\ru\DevExpress.Pdf.v15.2.Core.resources.dll
 D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.Properties.Resources.resources
+D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.ucEditor.resources
 D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.WChildForm.resources
 D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.WEntityForm.resources
 D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.WForm.resources
@@ -119,5 +120,5 @@ D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.csproj.GenerateResource.Cach
 D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.dll.licenses
 D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.dll
 D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.pdb
-D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.csprojResolveAssemblyReference.cache
-D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.ucEditor.resources
+D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.ucEditorInt.resources
+D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.ucEditorDateTime.resources
