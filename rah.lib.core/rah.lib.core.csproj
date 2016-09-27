@@ -218,6 +218,21 @@
   <ItemGroup>
     <None Include="Resources\resultset-first-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-document-close-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blog-post-accept-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shop-cart-add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-file-icon-entityform.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

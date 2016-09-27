@@ -59,7 +59,6 @@ namespace rah.lib.core
             }
         }
 
-
         private void buildMetaData(dynamic metaDataValues)
         {            
             foreach (var m in metaDataValues)
@@ -151,6 +150,7 @@ namespace rah.lib.core
         {
             primaryKey = DataTable.Rows[0]["id"];
             EntitySelect(primaryKey);
+            DoFirst();
         }
 
         private void bbPrior_Click(object sender, EventArgs e)
@@ -159,10 +159,12 @@ namespace rah.lib.core
             DataRow row = DataTable.Select(expression)[0];
             var index = DataTable.Rows.IndexOf(row);
             index--;
-            if (index < 0)
+            if (index < 0) {
                 index = 0;
+            }
             primaryKey = DataTable.Rows[index]["id"];
             EntitySelect(primaryKey);
+            DoPrior();
         }
 
         private void bbNext_Click(object sender, EventArgs e)
@@ -171,16 +173,44 @@ namespace rah.lib.core
             DataRow row = DataTable.Select(expression)[0];
             var index = DataTable.Rows.IndexOf(row);
             index++;
-            if (index > DataTable.Rows.Count -1)
-                index = DataTable.Rows.Count -1;
+            if (index > DataTable.Rows.Count -1) {
+                index = DataTable.Rows.Count - 1;
+            }                
             primaryKey = DataTable.Rows[index]["id"];
             EntitySelect(primaryKey);
+            DoNext();
         }
 
         private void bbLast_Click(object sender, EventArgs e)
         {
             primaryKey = DataTable.Rows[DataTable.Rows.Count - 1]["id"];
             EntitySelect(primaryKey);
+            DoLast();
+        }
+
+        private void bbClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        protected virtual void DoFirst()
+        {
+            // para ser sobrecarregado.
+        }
+
+        protected virtual void DoPrior()
+        {
+            // para ser sobrecarregado.
+        }
+
+        protected virtual void DoNext()
+        {
+            // para ser sobrecarregado.
+        }
+
+        protected virtual void DoLast()
+        {
+            // para ser sobrecarregado.
         }
     }
 }
