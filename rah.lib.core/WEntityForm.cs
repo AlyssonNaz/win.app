@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraVerticalGrid;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,7 +11,7 @@ namespace rah.lib.core
         private string metaData;
         private string model;
         private object primaryKey;
-        private DataTable DataTable;
+        public DataTable DataTable { set; get; }
         private IList<MetaData> MetaDataList;
         private Dictionary<string, IButtonEditor> dicComp;
 
@@ -20,8 +19,7 @@ namespace rah.lib.core
 
         public WEntityForm(string metaData, string model, object primaryKey)
         {
-            InitializeComponent();
-            DataTable = new DataTable();
+            InitializeComponent();            
             MetaDataList = new List<MetaData>();
             dicComp = new Dictionary<string, IButtonEditor>();
             panVertialGrid.Height = 0;
@@ -31,24 +29,36 @@ namespace rah.lib.core
             LoadModel();
         }
 
+        public void InitDataSouce()
+        {
+            var bs = new BindingSource();
+            bs.DataSource = DataTable;                      
+        }
+
         private void CreateEntityFormFromMetaData(string obj = "")
         {
             var Data = JsonConvert.DeserializeObject<dynamic>(metaData);
             buildMetaData(Data.metadata);            
             if (obj != "")
             {
-                var results = JsonConvert.DeserializeObject<dynamic>(obj);
-                foreach (var result in results)
-                {
-                    if (dicComp.ContainsKey(result.Name))
-                    {
-                        IButtonEditor ucEditor = null;
-                        dicComp.TryGetValue(result.Name, out ucEditor);                       
-                        ucEditor.Value = result.Value;
-                    }
-                }                
+                LoadEntity(obj);
             }
         }
+
+        private void LoadEntity(string obj)
+        {
+            var results = JsonConvert.DeserializeObject<dynamic>(obj);
+            foreach (var result in results)
+            {
+                if (dicComp.ContainsKey(result.Name))
+                {
+                    IButtonEditor buttonEditor = null;
+                    dicComp.TryGetValue(result.Name, out buttonEditor);
+                    buttonEditor.Value = result.Value;
+                }
+            }
+        }
+
 
         private void buildMetaData(dynamic metaDataValues)
         {            
@@ -75,23 +85,23 @@ namespace rah.lib.core
                     }
                 }                
                 MetaDataList.Add(metaData);
-                CreateUcEditor(metaData);                
+                CreateButtonEditor(metaData);                
             }
         }
 
-        private void CreateUcEditor(MetaData metaData)
+        private void CreateButtonEditor(MetaData metaData)
         {
-            IButtonEditor ucEditor = null;
+            IButtonEditor buttonEditor = null;
             switch (metaData.DataType)
             {
                 case MetaDataType.Int:
                     {
-                        ucEditor = new ucEditorInt();
+                        buttonEditor = new ucEditorInt();
                         break;
                     }
                 case MetaDataType.DateTime:
                     {
-                        ucEditor = new ucEditorDateTime();
+                        buttonEditor = new ucEditorDateTime();
                         break;
                     }
                 case MetaDataType.Float:
@@ -101,23 +111,23 @@ namespace rah.lib.core
                     }
                 case MetaDataType.String:
                     {
-                        ucEditor = new ucEditor();                        
+                        buttonEditor = new ucEditor();                        
                         break;
                     }
                 case MetaDataType.Text:
                     {
-                        ucEditor = new ucEditorText();
+                        buttonEditor = new ucEditorText();
                         break;
                     }
             }
-            ucEditor.Caption = metaData.Caption;
-            ucEditor.Parent = panVertialGrid;
-            ucEditor.Dock = DockStyle.Bottom;
+            buttonEditor.Caption = metaData.Caption;
+            buttonEditor.Parent = panVertialGrid;
+            buttonEditor.Dock = DockStyle.Bottom;
             var readOnly = metaData.ReadOnly || metaData.Name.Equals("createdAt") || metaData.Name.Equals("updatedAt");
-            ucEditor.SetRequired(metaData.Required);
-            ucEditor.SetReadOnly(readOnly);
-            panVertialGrid.Height += ucEditor.Height;
-            dicComp.Add(metaData.Name, ucEditor);
+            buttonEditor.SetRequired(metaData.Required);
+            buttonEditor.SetReadOnly(readOnly);
+            panVertialGrid.Height += buttonEditor.Height;
+            dicComp.Add(metaData.Name, buttonEditor);
         }
 
         private void LoadModel()
@@ -129,6 +139,48 @@ namespace rah.lib.core
                 var connection = WDMMain.GetInstance().GetConnection();
                 CreateEntityFormFromMetaData(connection.GetResponse($"api/model/{model}/{primaryKey}"));
             }
+        }
+
+        private void EntitySelect(object pk)
+        {
+            var connection = WDMMain.GetInstance().GetConnection();
+            LoadEntity(connection.GetResponse($"api/model/{model}/{pk}"));
+        }
+
+        private void bbFirst_Click(object sender, EventArgs e)
+        {
+            primaryKey = DataTable.Rows[0]["id"];
+            EntitySelect(primaryKey);
+        }
+
+        private void bbPrior_Click(object sender, EventArgs e)
+        {
+            var expression = $"id like '{primaryKey}'";
+            DataRow row = DataTable.Select(expression)[0];
+            var index = DataTable.Rows.IndexOf(row);
+            index--;
+            if (index < 0)
+                index = 0;
+            primaryKey = DataTable.Rows[index]["id"];
+            EntitySelect(primaryKey);
+        }
+
+        private void bbNext_Click(object sender, EventArgs e)
+        {
+            var expression = $"id like '{primaryKey}'";
+            DataRow row = DataTable.Select(expression)[0];
+            var index = DataTable.Rows.IndexOf(row);
+            index++;
+            if (index > DataTable.Rows.Count -1)
+                index = DataTable.Rows.Count -1;
+            primaryKey = DataTable.Rows[index]["id"];
+            EntitySelect(primaryKey);
+        }
+
+        private void bbLast_Click(object sender, EventArgs e)
+        {
+            primaryKey = DataTable.Rows[DataTable.Rows.Count - 1]["id"];
+            EntitySelect(primaryKey);
         }
     }
 }

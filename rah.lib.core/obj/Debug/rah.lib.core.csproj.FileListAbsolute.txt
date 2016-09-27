@@ -123,3 +123,4 @@ D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.pdb
 D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.ucEditorInt.resources
 D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.ucEditorDateTime.resources
 D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.ucEditorText.resources
+D:\Projetos\rah\rah.lib.core\obj\Debug\rah.lib.core.csprojResolveAssemblyReference.cache

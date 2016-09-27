@@ -63,6 +63,36 @@ namespace rah.lib.core.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Actions_go_last_view_icon {
+            get {
+                object obj = ResourceManager.GetObject("Actions_go_last_view_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Actions_go_next_icon {
+            get {
+                object obj = ResourceManager.GetObject("Actions_go_next_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Actions_go_previous_icon {
+            get {
+                object obj = ResourceManager.GetObject("Actions_go_previous_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap application_process {
             get {
                 object obj = ResourceManager.GetObject("application_process", resourceCulture);
@@ -96,6 +126,16 @@ namespace rah.lib.core.Properties {
         internal static System.Drawing.Bitmap register_icon {
             get {
                 object obj = ResourceManager.GetObject("register_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap resultset_first_icon {
+            get {
+                object obj = ResourceManager.GetObject("resultset_first_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

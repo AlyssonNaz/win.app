@@ -132,6 +132,8 @@ namespace rah.lib.core
                 var entityForm = new WEntityForm(connection.GetResponse($"api/model/{model}/info"), model, primaryKey);
                 entityForm.MdiParent = WDMMain.GetInstance().MainForm;
                 entityForm.Show();
+                entityForm.DataTable = DataTable;
+                entityForm.InitDataSouce();
                 return entityForm;
             }
             finally
