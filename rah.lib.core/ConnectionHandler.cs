@@ -7,7 +7,6 @@ namespace rah.lib.core
     public class ConnectionHandler : IConnectionHandler
     {
         private const string URI = "https://seugarcom.herokuapp.com/";
-
         public string GetResponse(string postData, string command)
         {            
             var request = (HttpWebRequest)WebRequest.Create($"{URI}{command}/");

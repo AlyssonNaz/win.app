@@ -73,12 +73,10 @@ namespace rah.lib.core
         {
             foreach (var m in metaDataValues)
             {
-                var result = JsonConvert.DeserializeObject<dynamic>(m.Value.ToString());
+                var result = JsonConvert.DeserializeObject<dynamic>(m.Value.ToString());                
                 var metaData = new MetaData();
                 metaData.Name = m.Name;
-                metaData.Caption = result.caption;
-                if (metaData.Caption == "")
-                    metaData.Caption = m.GetType().Name;
+                metaData.Caption = result.caption != null ? result.caption : "";
                 metaData.ReadOnly = result.readOnly != null ? result.readOnly : false;
                 metaData.DataType = MetaDataType.String;
                 MetaDataList.Add(metaData);
@@ -91,7 +89,7 @@ namespace rah.lib.core
             var dataColumn = new DataColumn();
             dataColumn.ColumnName = metaData.Name;
             dataColumn.Caption = metaData.Caption;
-            dataColumn.ReadOnly = metaData.ReadOnly;
+            dataColumn.ReadOnly = metaData.ReadOnly;                        
             switch (metaData.DataType)
             {
                 case MetaDataType.Int:
@@ -120,7 +118,7 @@ namespace rah.lib.core
                         break;
                     }
             }
-            DataTable.Columns.Add(dataColumn);
+            DataTable.Columns.Add(dataColumn);            
         }
 
         protected virtual IWEntityForm CreateEntityForm(string model, object primaryKey = null)

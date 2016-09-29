@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -51,8 +52,11 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
@@ -75,30 +79,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Token.cs" />
-    <Compile Include="ucEditor.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucEditor.Designer.cs">
-      <DependentUpon>ucEditor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucEditorDateTime.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucEditorDateTime.Designer.cs">
-      <DependentUpon>ucEditorDateTime.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucEditorInt.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucEditorInt.Designer.cs">
-      <DependentUpon>ucEditorInt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucEditorText.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucEditorText.Designer.cs">
-      <DependentUpon>ucEditorText.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utility.cs" />
     <Compile Include="WChildForm.cs">
       <SubType>Form</SubType>
@@ -156,18 +136,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucEditor.resx">
-      <DependentUpon>ucEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucEditorDateTime.resx">
-      <DependentUpon>ucEditorDateTime.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucEditorInt.resx">
-      <DependentUpon>ucEditorInt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucEditorText.resx">
-      <DependentUpon>ucEditorText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WChildForm.resx">
       <DependentUpon>WChildForm.cs</DependentUpon>

@@ -38,9 +38,7 @@ namespace rah.lib.core
 
     public interface IButtonEditor : IWFrame
     {
-        string Caption { set; get; }
-        object Value { set; get; }
-        void SetRequired(bool required);
+        object Value { set; get; }        
         void SetReadOnly(bool readOnly);
         int Height { get; }
     }    

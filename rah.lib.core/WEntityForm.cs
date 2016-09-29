@@ -1,4 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraLayout;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,18 +14,15 @@ namespace rah.lib.core
         private string metaData;
         private string model;
         private object primaryKey;
-        public DataTable DataTable { set; get; }
-        private IList<MetaData> MetaDataList;
-        private Dictionary<string, IButtonEditor> dicComp;
+        public DataTable DataTable { set; get; } = new DataTable();
+        private IList<MetaData> MetaDataList = new List<MetaData>();
+        private Dictionary<string, Control> dicComp = new Dictionary<string, Control>();
 
         public WEntityForm() { }
 
         public WEntityForm(string metaData, string model, object primaryKey)
         {
-            InitializeComponent();            
-            MetaDataList = new List<MetaData>();
-            dicComp = new Dictionary<string, IButtonEditor>();
-            panVertialGrid.Height = 0;
+            InitializeComponent();
             this.metaData = metaData;
             this.model = model;
             this.primaryKey = primaryKey;
@@ -52,9 +52,9 @@ namespace rah.lib.core
             {
                 if (dicComp.ContainsKey(result.Name))
                 {
-                    IButtonEditor buttonEditor = null;
+                    Control buttonEditor = null;
                     dicComp.TryGetValue(result.Name, out buttonEditor);
-                    buttonEditor.Value = result.Value;
+                    (buttonEditor as TextEdit).EditValue = result.Value;                    
                 }
             }
         }
@@ -66,7 +66,7 @@ namespace rah.lib.core
                 var result = JsonConvert.DeserializeObject<dynamic>(m.Value.ToString());
                 var metaData = new MetaData();
                 metaData.Name = m.Name;
-                metaData.Caption = result.caption;
+                metaData.Caption = result.caption != null ? result.caption : "";
                 metaData.ReadOnly = result.readOnly != null ? result.readOnly : false;
                 if (result.type != null)
                 {
@@ -84,23 +84,24 @@ namespace rah.lib.core
                     }
                 }                
                 MetaDataList.Add(metaData);
-                CreateButtonEditor(metaData);                
+                CreateButtonEditor(metaData);
             }
         }
 
         private void CreateButtonEditor(MetaData metaData)
         {
-            IButtonEditor buttonEditor = null;
+            RepositoryItemTextEdit repository = null;
+            Control buttonEditor = null;
             switch (metaData.DataType)
             {
                 case MetaDataType.Int:
                     {
-                        buttonEditor = new ucEditorInt();
+                        buttonEditor = new SpinEdit();
                         break;
                     }
                 case MetaDataType.DateTime:
                     {
-                        buttonEditor = new ucEditorDateTime();
+                        buttonEditor = new DateEdit();                        
                         break;
                     }
                 case MetaDataType.Float:
@@ -110,22 +111,22 @@ namespace rah.lib.core
                     }
                 case MetaDataType.String:
                     {
-                        buttonEditor = new ucEditor();                        
+                        buttonEditor = new ButtonEdit();
+                        (buttonEditor as ButtonEdit).Properties.Buttons.Clear();                        
                         break;
                     }
                 case MetaDataType.Text:
                     {
-                        buttonEditor = new ucEditorText();
+                        buttonEditor = new MemoEdit();
                         break;
                     }
             }
-            buttonEditor.Caption = metaData.Caption;
-            buttonEditor.Parent = panVertialGrid;
-            buttonEditor.Dock = DockStyle.Bottom;
-            var readOnly = metaData.ReadOnly || metaData.Name.Equals("createdAt") || metaData.Name.Equals("updatedAt");
-            buttonEditor.SetRequired(metaData.Required);
-            buttonEditor.SetReadOnly(readOnly);
-            panVertialGrid.Height += buttonEditor.Height;
+
+            LayoutControlItem lci = layoutControl.Root.AddItem();
+            repository = (buttonEditor as TextEdit).Properties;
+            lci.Control = buttonEditor;   
+            repository.ReadOnly = metaData.ReadOnly || metaData.Name.Equals("createdAt") || metaData.Name.Equals("updatedAt");
+            lci.Text = metaData.Caption;
             dicComp.Add(metaData.Name, buttonEditor);
         }
 
@@ -150,7 +151,6 @@ namespace rah.lib.core
         {
             primaryKey = DataTable.Rows[0]["id"];
             EntitySelect(primaryKey);
-            DoFirst();
         }
 
         private void bbPrior_Click(object sender, EventArgs e)
@@ -164,7 +164,6 @@ namespace rah.lib.core
             }
             primaryKey = DataTable.Rows[index]["id"];
             EntitySelect(primaryKey);
-            DoPrior();
         }
 
         private void bbNext_Click(object sender, EventArgs e)
@@ -178,39 +177,17 @@ namespace rah.lib.core
             }                
             primaryKey = DataTable.Rows[index]["id"];
             EntitySelect(primaryKey);
-            DoNext();
         }
 
         private void bbLast_Click(object sender, EventArgs e)
         {
             primaryKey = DataTable.Rows[DataTable.Rows.Count - 1]["id"];
             EntitySelect(primaryKey);
-            DoLast();
         }
 
         private void bbClose_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        protected virtual void DoFirst()
-        {
-            // para ser sobrecarregado.
-        }
-
-        protected virtual void DoPrior()
-        {
-            // para ser sobrecarregado.
-        }
-
-        protected virtual void DoNext()
-        {
-            // para ser sobrecarregado.
-        }
-
-        protected virtual void DoLast()
-        {
-            // para ser sobrecarregado.
         }
     }
 }

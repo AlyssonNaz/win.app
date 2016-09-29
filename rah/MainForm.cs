@@ -36,7 +36,7 @@ namespace rah
         }
 
         private void mesaToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {            
+        {
             CreateViewFrame(Activator.CreateInstance<MesaViewFrame>(), "table");
         }
 
